@@ -1,0 +1,33 @@
+
+<div class="jumbotron">
+	<ul>
+		<li>Step 1: Install ngx-pagination using "npm install ngx-pagination --save"</li>
+		<li>Step 2: Add reference of this pagination in app.module.ts</li>
+		<li>Step 3: Now you can use pagination in any component. Follow this page to use pagination.</li>
+		<li><strong>Note: don't worry there is no need to add any refernce of ngx-pagination in each component in which we want to use pagination.</strong></li>
+		<li>For more info follow <a href="http://michaelbromley.github.io/ngx-pagination/#/" target="_blank">This Page</a></li>
+		<li>For more info follow <a href="https://www.youtube.com/watch?v=MMo7iq_4BRc&ab_channel=CodingShiksha" target="_blank">This Video</a></li>
+	</ul>
+</div>
+<div class="contaienr">
+	<table class="table">
+		<thead>
+			<th>Sr No</th>
+			<th>Name</th>
+			<th>Father Name</th>
+			<th>Class</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let a of studArray | paginate: { id: 'foo',
+            itemsPerPage: 3,
+            currentPage: page,
+            totalItems: totalRecords }">
+				<td>{{a.srn}}</td>
+				<td>{{a.name}}</td>
+				<td>{{a.fname}}</td>
+				<td>{{a.class}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<pagination-controls id="foo" maxSize="5" (pageChange)="page = $event"></pagination-controls>
+</div>

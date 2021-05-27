@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <ul>
+    <li>Step 1: Run "<strong>npm install xlsx --save</strong>" to save the package. </li>
+    <li>Step 2: Add reference "<strong>import * as XLSX from 'xlsx'</strong>" in the particular component in which we want to save Excel file. </li>
+    <li>Step 3: Now proceed as given blow.</li>
+  </ul>
+  <p>Note: No need to import any reference to add in app.module.ts</p>
+  <a href="https://www.c-sharpcorner.com/article/export-data-in-excel-sheet-using-angular/" target="_blank">For complete reference visit here</a>
+</div>
+  
+  <button (click)="ExportTOExcel()" class="btn btn-success">ExportTOExcel</button> 
+        
+  <table class="table table-bordered" id="excel-table">  
+    <thead class="thead-dark">  
+      <tr>  
+        <th>S.No</th>  
+        <th>Team</th>  
+        <th>Match</th>  
+        <th>Win</th>  
+        <th>Loss</th>  
+        <th>Cancel</th>  
+        <th>Point</th>  
+      </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let tm of team">  
+        <td>{{tm.Sno}}</td>  
+        <td>{{tm.Team}}</td>  
+        <td>{{tm.Match}}</td>  
+        <td>{{tm.Win}}</td>  
+        <td>{{tm.Loss}}</td>  
+        <td>{{tm.Cancel}}</td>  
+        <td>{{tm.Point}}</td>  
+      </tr>  
+    </tbody>  
+  </table>  
+

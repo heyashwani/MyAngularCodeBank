@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <li>step1: create a directive using <strong>"ng g d directive-name"</strong>
+    <p>Note: When you create a directive app.module.ts file will automatically update and directive will be registered in app.module.ts automatically.</p>
+  </li>
+  <li>Step 2: Now you can use this directive anywhere within the module.</li>
+</div>
+<br />
+<div class="container">
+ 
+    <div>
+      <h4>This directive allow only 10 integers in textbox so we can use it for mobile number</h4>
+      <input type="text" appOnlynumber> 
+    </div>
+    <br>
+    <hr />
+    <div>
+      <h4>This directive allow integers as well as (.) only one time in textbox so we can use it for amount</h4>
+      <input type="text" appAmountDirective maxlength="5">
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h4>This directive allow only alphabets and numbers</h4>
+      <input type="text" appAlphanumeric >
+    </div>
+    
+    
+ 
+
+  
+ 
+  
+
+</div>

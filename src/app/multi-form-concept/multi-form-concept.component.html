@@ -1,0 +1,91 @@
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-center mt-3 mb-3">Guardian Details</h2>
+      <div class="temp">
+        <form #myform1="ngForm" (ngSubmit)="sendData(myform1.value)">
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" name="guard_name" ngModel>
+          </div>
+          <div class="form-group">
+            <label>Gender:</label>
+            <div class="form-check-inline form-control">
+              <label class="form-check-label"><input type="radio" name="guard_gender" value="Male" ngModel class="form-check-input"> Male</label><br />
+              <label class="form-check-label"><input type="radio" name="guard_gender" value="Female" ngModel class="form-check-input"> Female</label><br />
+              <label class="form-check-label"><input type="radio" name="guard_gender" value="Other" ngModel class="form-check-input"> Other</label>
+            </div>
+          </div>
+          <input type="submit" name="submit" class=" btn btn-primary" id="prnt_btn" />
+          
+        </form>
+      
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h2 class="text-center mt-3 mb-3">Children Details</h2>
+      <div *ngFor="let a of myArr;let i = index" class="appended_form">
+        <hr />
+        <form #childFormi="ngForm" (ngSubmit)="ChildForm(childFormi.value)" >
+          <div class="form-group">
+            <label class="abc">Relation</label>
+            <select class="form-control" name="relation" ngModel>
+              <option value="">Choose Relation</option>
+              <option value="Son">Son</option>
+              <option value="Daughter">Daughter</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="childname" ngModel />
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="form-check-inline form-control">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="Male" name="child_gender" ngModel /> Male
+              </label>
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="Female" name="child_gender" ngModel /> Femail
+              </label>
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="Other" name="child_gender" ngModel /> Other
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Available Documents</label>
+            <div class="form-check-inline form-control">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="Adhar Card" name="child_doc1" ngModel /> Adhar Card
+              </label>
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="Passport" name="child_doc2" ngModel /> Passport
+              </label>
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="Driving License" name="child_doc3" ngModel /> Driving License
+              </label>
+            </div>
+          </div>
+          <input type="submit" name="submit" class="mybtn btn btn-primary" />
+        </form>
+        <hr />
+      </div>
+      <button type="button" class="btn btn-dark float-right mt-3" name="add" (click)="append()">Add Children</button>
+    </div>
+  </div>
+  <div class="row mb-5 mt-3">
+    <div class="col-md-10 offset-md-1">
+      <button type="button" class="btn btn-lg btn-success " id="xyz">Submit</button>
+    </div>
+  </div>
+  
+  
+  
+  </div>

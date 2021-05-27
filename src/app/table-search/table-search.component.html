@@ -1,0 +1,26 @@
+<div class="jumbotron">
+	<p>Here a pipe is being used for searching.You can find this pipe in pipe folder.
+		When we create a pipe using <strong>ng g p pipe_name</strong> it will autometically registered in module.ts.Once it is registered in module.ts then we can use 
+		it anywere in project without register it in that particular component.
+	</p>
+</div>
+<div class="contaienr">
+	<input type="search" class="mt-3 mb-2 ml-auto" placeholder="Search Here.." [(ngModel)]="query">
+	<table class="table">
+		<thead>
+			<th>Sr No</th>
+			<th>Name</th>
+			<th>Father Name</th>
+			<th>Class</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let a of studArray | searchPipe: query" (click)="abc(a)">
+				<td>{{a.srn}}</td>
+				<td>{{a.name}}</td>
+				<td>{{a.fname}}</td>
+				<td>{{a.class}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+

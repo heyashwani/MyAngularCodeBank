@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+          <form [formGroup]="travelerForm" (submit)="onSubmit()" >
+              <div class="row">
+                  <div class="col-sm-6 form-group">
+                      <label>Name</label>
+                      <input type="text" formControlName="tname" class="form-control">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6" form-group>
+                      <label>Gender</label>
+                      <input type="text" formControlName="tgender" class="form-control">
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-sm-6 text-right">
+                      <button class="btn btn-success" type="button" (click)="addRow()">Add Children +</button>
+                  </div>
+              </div>
+
+              <div formArrayName="childRow" >
+                  <div>
+                      <article class="border-top border-bottom mt-3 mb-3 shadow-sm pl-5 col-sm-6" *ngFor="let a of travelerForm.get('childRow')['controls'];let i = index" [formGroupName]="i">
+                          <div class="row">
+                              <div class="col-sm-12 text-right">
+                                  <button class="btn btn-xs btn-danger">Remove</button>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-10 form-group">
+                                  <label for="">Child Name</label>
+                                  <input type="text" formControlName="cname" class="form-control">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-10 form-group">
+                                  <label for="">Child Age</label>
+                                  <input type="text" formControlName="cage" class="form-control">
+                              </div>
+                          </div>
+                      </article>
+                  </div>
+                 
+              </div>
+              
+              <div class="row">
+                  <div class="col-sm-6">
+                      <input class="btn btn-success" type="submit">
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

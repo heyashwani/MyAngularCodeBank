@@ -1,0 +1,25 @@
+<div class="jumbotron">
+	<ul>
+		<li>Step 1:Install the package using <strong>"npm install ng-starrating"</strong></li>
+		<li>Step 2: Register your package in app.module.ts.(check module file)</li>
+		<li>Step 3: Add html code</li>
+		<li>Step 4: Add .ts code</li>
+	</ul>
+	<p>NOTE: after completion my code I found a error in running the project.like this
+		<figure><img src="../../assets/images/scene1.png" alt=""></figure>
+		<br />
+		I think this error was due to version mismathc. this project is in angular 7 and this time my global angular cli was angular 8.
+		But i got the solution.For R&D result <a href="https://stackoverflow.com/questions/60131331/error-ts1086-an-accessor-cannot-be-declared-in-an-ambient-context-in-angular-9" target="_blank">Click Here</a>
+		I resolved the error to updating "tsconfig.json" file. like this.
+		<figure>
+			<img src="../../assets/images/scene2.png" alt="">
+		</figure>
+	</p>
+	<h3>For Complete Reference <a href="https://www.npmjs.com/package/ng-starrating" target="_blanck">Click Here..</a></h3>
+</div>
+<div style="text-align:center;margin-bottom:100px;background-color: aliceblue;border:7px solid gray;" >
+  <h1>
+    ng-starrating demo
+  </h1>
+  <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+</div>

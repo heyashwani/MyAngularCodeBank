@@ -1,0 +1,7 @@
+<div class="side_div">
+    <ul class="side_ul">
+        <li *ngFor = "let abc of name" >
+            <a href="javascript:void(0);" (click)="navPage(abc)" [ngClass]="(menuId == abc.id)?'active':''">{{abc.title}}</a>
+        </li>
+    </ul>
+</div>
