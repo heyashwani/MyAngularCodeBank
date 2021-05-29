@@ -35,7 +35,6 @@ export class LiveDataComponent implements OnInit {
       
       console.log(this.posts);
     })  
-    
 
     
     

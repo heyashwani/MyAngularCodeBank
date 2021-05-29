@@ -42,6 +42,8 @@ import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { ProductComponent } from './product/product.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { MylivechatComponent } from './mylivechat/mylivechat.component';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { LightboxComponent } from './lightbox/lightbox.component';
 
 
 
@@ -220,6 +222,14 @@ const routes: Routes = [
 	{
 		path: 'formArray', 
 		component: FormArrayComponent
+	},
+	{
+		path: 'slickSlider', 
+		component: ImageSliderComponent
+	},
+	{
+		path: 'lightbox', 
+		component: LightboxComponent
 	},
 	{
 		path: '**',

@@ -74,6 +74,9 @@ import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { ProductComponent } from './product/product.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { MylivechatComponent } from './mylivechat/mylivechat.component';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { LightboxModule } from 'ngx-lightbox';
+import { LightboxComponent } from './lightbox/lightbox.component';
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -126,6 +129,8 @@ import { MylivechatComponent } from './mylivechat/mylivechat.component';
     ProductComponent,
     FormArrayComponent,
     MylivechatComponent,
+    ImageSliderComponent,
+    LightboxComponent,
    
   ],
   imports: [
@@ -146,7 +151,7 @@ import { MylivechatComponent } from './mylivechat/mylivechat.component';
     NgHttpLoaderModule.forRoot(),
     SubjectModule,
     RatingModule,
-   
+    LightboxModule 
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
