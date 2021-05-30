@@ -1,13 +1,5 @@
-<!-- <div *ngFor="let image of _albums; let i=index">
-    <img [src]="image.thumb" (click)="open(i)" />
-  </div> -->
-
 <div class="container">
-    <div class="row">
-        <div class="col-sm-4" *ngFor="let image of _albums; let i=index">
-            <figure class="h-100">
-                <img [src]="image.thumb" (click)="open(i)" class="img-fluid "  />
-            </figure>
-        </div>
-    </div>
+    <div data-thumb="1.png">
+        <div class="thumb-image detail_images"> <img src="../../assets/images/date1.png" data-imagezoom="true" class="img-responsive" alt=""> </div>
+    </div>  			
 </div>

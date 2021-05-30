@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
-import { Lightbox } from 'ngx-lightbox';
-import { LightboxConfig } from 'ngx-lightbox';
 
+declare var $:any;
 
 @Component({
   selector: 'app-image-slider',
@@ -13,7 +12,7 @@ export class ImageSliderComponent implements OnInit {
 
  
 
-    _albums:any = [];
+ 
   constructor(private userService:Service1Service) {
      this.userService.HeaderDisplay.emit(true);
 
@@ -23,6 +22,8 @@ export class ImageSliderComponent implements OnInit {
      
 
   ngOnInit() {
+
+
   }
 
 }
