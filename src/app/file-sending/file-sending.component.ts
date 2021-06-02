@@ -10,6 +10,7 @@ import { Service2Service } from '../services/Service2/service2.service';
 export class FileSendingComponent implements OnInit {
 
   selectedFile:File;
+  myFile:any = null;
   constructor(private service1:Service1Service,private service2:Service2Service) {
     this.service1.HeaderDisplay.emit(true);
    }
@@ -19,8 +20,22 @@ export class FileSendingComponent implements OnInit {
 
   onFileChanged(ev)
   {
-    this.selectedFile = ev.target.files[0];
-    console.log(this.selectedFile);
+
+   
+    if(ev.target.files[0].size/1000>100){
+     
+      alert("greater than 100kb");
+    }
+    else if(ev.target.files[0].type == "image/jpeg"){
+
+      alert("type is .JPG");
+  
+    }
+    else{
+      this.selectedFile = ev.target.files[0];
+      console.log(this.selectedFile);
+    }
+    
   }
   onUpload()
     {

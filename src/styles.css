@@ -70,3 +70,7 @@ header
 
 
 	
+	.carousel-control-next, .carousel-control-prev{
+		z-index: 100;
+		cursor:pointer;
+	  }

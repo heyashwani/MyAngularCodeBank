@@ -77,6 +77,11 @@ import { MylivechatComponent } from './mylivechat/mylivechat.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { LightboxComponent } from './lightbox/lightbox.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
+import { RecaptchaComponent } from './recaptcha/recaptcha.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -131,6 +136,8 @@ import { LightboxComponent } from './lightbox/lightbox.component';
     MylivechatComponent,
     ImageSliderComponent,
     LightboxComponent,
+    ScrollResizeComponent,
+    RecaptchaComponent,
    
   ],
   imports: [
@@ -151,7 +158,10 @@ import { LightboxComponent } from './lightbox/lightbox.component';
     NgHttpLoaderModule.forRoot(),
     SubjectModule,
     RatingModule,
-    LightboxModule 
+    LightboxModule,
+    CarouselModule.forRoot(),
+    AccordionModule.forRoot(),
+    NgxCaptchaModule
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},

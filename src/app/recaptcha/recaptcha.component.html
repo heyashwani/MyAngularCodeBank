@@ -1,0 +1,20 @@
+<div class="border p-5 bg-light">
+  <p>For Complete Reference <a href="https://www.npmjs.com/package/ngx-captcha" target="_blank">Click Here</a></p>
+  <p>Video Reference <a href="https://youtu.be/AYznH6MBXM8" target="_blank">Click Here</a></p>
+</div>
+<form [formGroup]="aFormGroup">
+  <ngx-recaptcha2 #captchaElem
+    [siteKey]="key"
+    (reset)="handleReset()"
+    (expire)="handleExpire()"
+    (error)="handleError()"
+    (load)="handleLoad()"
+    (success)="handleSuccess($event)"
+    
+    [size]="size"
+    [hl]="lang"
+    [theme]="Dark"
+    [type]="type"
+    formControlName="recaptcha">
+  </ngx-recaptcha2>
+</form>

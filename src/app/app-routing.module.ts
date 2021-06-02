@@ -44,6 +44,8 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { MylivechatComponent } from './mylivechat/mylivechat.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { LightboxComponent } from './lightbox/lightbox.component';
+import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
+import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 
 
 
@@ -224,12 +226,20 @@ const routes: Routes = [
 		component: FormArrayComponent
 	},
 	{
-		path: 'slickSlider', 
+		path: 'slider', 
 		component: ImageSliderComponent
 	},
 	{
 		path: 'lightbox', 
 		component: LightboxComponent
+	},
+	{
+		path: 'scroll-resize', 
+		component: ScrollResizeComponent
+	},
+	{
+		path: 'recaptcha', 
+		component: RecaptchaComponent
 	},
 	{
 		path: '**',

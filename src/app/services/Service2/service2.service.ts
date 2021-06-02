@@ -53,8 +53,10 @@ export class Service2Service {
     menu36:{id:'36',title:'Product 2 >',url:'http://localhost:4200/product/product2',url1:'product/product2'},
     menu37:{id:'37',title:'My Live Chat',url:'http://localhost:4200/product/mylivechat',url1:'mylivechat'},
     menu38:{id:'38',title:'Form Array(Reactive Form)',url:'http://localhost:4200/product/formArray',url1:'formArray'},
-    menu39:{id:'39',title:'Slick Slider',url:'http://localhost:4200/product/slickSlider',url1:'slickSlider'},
+    menu39:{id:'39',title:'Slider',url:'http://localhost:4200/product/slider',url1:'slider'},
     menu40:{id:'40',title:'Lightbox',url:'http://localhost:4200/product/lightbox',url1:'lightbox'},
+    menu41:{id:'41',title:'Scroll-Resize',url:'http://localhost:4200/product/scroll-resize',url1:'scroll-resize'},
+    menu42:{id:'42',title:'Google-Recaptcha',url:'http://localhost:4200/product/recaptcha',url1:'recaptcha'},
     
     
     
@@ -102,7 +104,9 @@ sideMenu = [
   this.sdMenu.menu37,
   this.sdMenu.menu38,
   this.sdMenu.menu39,
-  this.sdMenu.menu40
+  this.sdMenu.menu40,
+  this.sdMenu.menu41,
+  this.sdMenu.menu42
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
