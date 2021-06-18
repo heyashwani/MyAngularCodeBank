@@ -1,7 +1,12 @@
 <div class="border p-5 bg-light">
   <p>For Complete Reference <a href="https://www.npmjs.com/package/ngx-captcha" target="_blank">Click Here</a></p>
   <p>Video Reference <a href="https://youtu.be/AYznH6MBXM8" target="_blank">Click Here</a></p>
+  <p>
+    <strong>Generate SiteKey --->> <a href="https://www.google.com/recaptcha/admin/create" target="_blank">Click Here</a></strong>
+  </p>
 </div>
+
+<!-- recaptcha v2 -->
 <form [formGroup]="aFormGroup">
   <ngx-recaptcha2 #captchaElem
     [siteKey]="key"
@@ -18,3 +23,27 @@
     formControlName="recaptcha">
   </ngx-recaptcha2>
 </form>
+<!-- end recaptcha v2 -->
+
+
+<!-- recaptcha v3 -->
+<!-- <div >
+  <form [formGroup]="aFormGroup">
+    <ngx-invisible-recaptcha #captchaElem
+      [siteKey]="key"
+      (reset)="handleReset()"
+      (ready)="handleReady()"
+      (load)="handleLoad()"
+      (success)="handleSuccess($event)"
+      [useGlobalDomain]="false"
+      [type]="type"
+      [badge]="badge"
+      [ngModel]="recaptcha"
+      [ngModelOptions]="{ standalone: true }">
+    </ngx-invisible-recaptcha>
+  </form>
+</div> -->
+
+<!-- end recaptcha v3 -->
+
+<button (click)="myReset()">Reset</button>

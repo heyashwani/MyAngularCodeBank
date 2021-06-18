@@ -14,14 +14,17 @@ export class SearchableDropdownComponent implements OnInit {
     {
       sutudData:{
                   data:{ 
-                          id: 1, name: 'BMW' 
+                          id: 1,
+                          name: 'BMW' 
                         },
                 }
     },
     {
       sutudData:{
                   data:{ 
-                          id: 2, name: 'AUDI' 
+                          id: 2,
+                         name: 'AUDI',
+                         isDisable:true
                         },
                 }
     },
@@ -35,7 +38,9 @@ export class SearchableDropdownComponent implements OnInit {
     {
       sutudData:{
                   data:{ 
-                          id: 4, name: 'HUNDAYI' 
+                          id: 4, 
+                          name: 'HUNDAYI',
+                          isDisable:true 
                         },
                 }
     },
@@ -51,6 +56,10 @@ constructor(private service1:Service1Service,private userService:Service2Service
 
 
   ngOnInit() {
+  }
+
+  abc(){
+    console.log(this.selectedCar);
   }
   
 
