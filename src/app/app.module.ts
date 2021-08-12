@@ -82,6 +82,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
 import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
+
+
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -138,6 +141,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     LightboxComponent,
     ScrollResizeComponent,
     RecaptchaComponent,
+    VoiceRecognitionComponent,
    
   ],
   imports: [
@@ -161,7 +165,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     LightboxModule,
     CarouselModule.forRoot(),
     AccordionModule.forRoot(),
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},

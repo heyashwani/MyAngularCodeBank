@@ -46,6 +46,7 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { LightboxComponent } from './lightbox/lightbox.component';
 import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
 import { RecaptchaComponent } from './recaptcha/recaptcha.component';
+import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
 
 
 
@@ -78,7 +79,7 @@ const routes: Routes = [
 	{ 
 		path: 'reactive-form', 
 		component: ReactiveFormComponent,
-		canActivate:[AuthGuard] 
+		//canActivate:[AuthGuard] 
 	},
 	{ 
 		path: 'table-search', 
@@ -240,6 +241,10 @@ const routes: Routes = [
 	{
 		path: 'recaptcha', 
 		component: RecaptchaComponent
+	},
+	{
+		path: 'voiceRecognition', 
+		component: VoiceRecognitionComponent
 	},
 	{
 		path: '**',

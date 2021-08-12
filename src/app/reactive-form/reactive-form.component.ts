@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Service1Service } from '../services/Service1/service1.service';
 
+
+      
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -10,6 +12,8 @@ import { Service1Service } from '../services/Service1/service1.service';
 export class ReactiveFormComponent implements OnInit {
 
   regForm:FormGroup;
+  
+  
   constructor(private service1:Service1Service,private _FormBuilder:FormBuilder) { 
 
     this.service1.HeaderDisplay.emit(true);
@@ -22,6 +26,8 @@ export class ReactiveFormComponent implements OnInit {
       email: [null,[Validators.required,Validators.email]],
       mobile: [null,[Validators.required,Validators.minLength(10)]]
     });
+
+   
   }
 
   onSubmit()
@@ -39,5 +45,7 @@ export class ReactiveFormComponent implements OnInit {
     }
     
   }
+
+  
 
 }

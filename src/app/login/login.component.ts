@@ -46,11 +46,13 @@ export class LoginComponent implements OnInit {
       this.userDetail.password = this.password;
 
       this.userService.LoaderDisplay.emit(true);
-      // this.userService.LoaderDisplay.emit(false);
-      //   this.router.navigate(['home']);
+      this.userService.LoaderDisplay.emit(false);
+        this.router.navigate(['home']);
       this.service2.userLogin(this.userDetail).subscribe(data=>{
           
         this.res = data;
+
+        
         
         if(this.res.message == "Successful")
         {
