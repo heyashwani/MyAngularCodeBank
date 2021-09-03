@@ -9,8 +9,10 @@ import { Service2Service } from '../services/Service2/service2.service';
 })
 export class FileSendingComponent implements OnInit {
 
+ 
   selectedFile:File;
   myFile:any = null;
+  imgURL: string | ArrayBuffer;
   constructor(private service1:Service1Service,private service2:Service2Service) {
     this.service1.HeaderDisplay.emit(true);
    }
@@ -32,15 +34,27 @@ export class FileSendingComponent implements OnInit {
   
     }
     else{
-      this.selectedFile = ev.target.files[0];
       console.log(this.selectedFile);
+
+      var reader = new FileReader();
+      this.selectedFile = ev.target.files[0];
+      reader.readAsDataURL(this.selectedFile); 
+      reader.onload = (_event) => { 
+        this.imgURL = reader.result; 
+      }
     }
+
+
+
     
+      
   }
   onUpload()
     {
+      
       const frmData = new FormData();
       frmData.append('Image', this.selectedFile, this.selectedFile.name);
+      
 
       this.service2.uploadAttachment(frmData).subscribe(
         (resp: any) => {

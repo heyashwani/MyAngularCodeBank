@@ -46,7 +46,14 @@ export class TableSortingComponent implements OnInit {
   {
     this.sortingColumn = key;
     this.key = key;
-    this.reverse = !this.reverse;
+    this.reverse = false;
+  }
+
+  sortCol1(key:string)
+  {
+    this.sortingColumn = key;
+    this.key = key;
+    this.reverse = true;
   }
 
  
