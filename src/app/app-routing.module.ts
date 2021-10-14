@@ -48,6 +48,7 @@ import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
 import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
 import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
+import { ChipsComponent } from './chips/chips.component';
 
 
 
@@ -250,6 +251,10 @@ const routes: Routes = [
 	{
 		path: 'virtual-scroll', 
 		component: VirtualScrollComponent
+	},
+	{
+		path: 'chips', 
+		component: ChipsComponent
 	},
 	{
 		path: '**',

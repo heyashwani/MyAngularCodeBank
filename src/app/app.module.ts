@@ -86,6 +86,9 @@ import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+import { ChipsComponent } from './chips/chips.component';
+import { TagInputModule } from 'ngx-chips';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -144,6 +147,7 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
     RecaptchaComponent,
     VoiceRecognitionComponent,
     VirtualScrollComponent,
+    ChipsComponent,
    
   ],
   imports: [
@@ -169,7 +173,9 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
     AccordionModule.forRoot(),
     NgxCaptchaModule,
     NgxCsvParserModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    TagInputModule,
+    NgMultiSelectDropDownModule.forRoot()
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
