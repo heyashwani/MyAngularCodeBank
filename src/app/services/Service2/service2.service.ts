@@ -58,6 +58,7 @@ export class Service2Service {
     menu41:{id:'41',title:'Scroll-Resize',url:'http://localhost:4200/product/scroll-resize',url1:'scroll-resize'},
     menu42:{id:'42',title:'Google-Recaptcha',url:'http://localhost:4200/product/recaptcha',url1:'recaptcha'},
     menu43:{id:'43',title:'Voice Recognition',url:'http://localhost:4200/product/voiceRecognition',url1:'voiceRecognition'},
+    menu44:{id:'44',title:'Virtual Scroll',url:'http://localhost:4200/virtual-scroll',url1:'virtual-scroll'},
     
     
     
@@ -109,6 +110,7 @@ sideMenu = [
   this.sdMenu.menu41,
   this.sdMenu.menu42,
   this.sdMenu.menu43,
+  this.sdMenu.menu44,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
@@ -167,6 +169,20 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
     // return this.http.post('http://localhost/MyAngularCodeBank/insert_child.php',details)
   
   }
+
+  get(url:any){
+    let headers = new HttpHeaders({ 'responseType': 'text' });
+    return this.http.get(url,{responseType: 'text'});
+    
+  }
+
+  post(url,data){
+    let headers = new HttpHeaders({ 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaXNfcHJpbmNpcGxlIjowLCJ1c2VyX3R5cGUiOjEsInVzZXJfaWQiOjgsIm5nb19pZCI6MCwiaWF0IjoxNjM0MDMyMjQ2fQ.pKEiZQhFACU9AgorXy4dMbpwx3ZL78VwdS9yNDrf2PQ' });
+
+    return this.http.post(url,data,{headers:headers});
+  }
   
 }
+
+
  

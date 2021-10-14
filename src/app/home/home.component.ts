@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
+import { NgxCsvParser } from 'ngx-csv-parser';
+import { NgxCSVParserError } from 'ngx-csv-parser';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,13 @@ import { Service1Service } from '../services/Service1/service1.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private userService:Service1Service) { 
+  @ViewChild('fileImportInput') fileImportInput: any;
+
+  csvRecords: any[] = [];
+  header = true;
+  
+  constructor(private userService:Service1Service,
+    private ngxCsvParser: NgxCsvParser) { 
 
     this.userService.HeaderDisplay.emit(true);
     
@@ -30,6 +38,23 @@ export class HomeComponent implements OnInit {
       /* Alert the copied text */
       alert(copyText.value);
     }
+
+    fileChangeListener($event: any){
+      // Select the files from the event
+    const files = $event.srcElement.files;
+
+    // Parse the file you want to select for the operation along with the configuration
+    this.ngxCsvParser.parse(files[0], { header: this.header, delimiter: ',' })
+      .pipe().subscribe((result: Array<any>) => {
+
+        console.log('Result', result);
+        this.csvRecords = result;
+      }, (error: NgxCSVParserError) => {
+        console.log('Error', error);
+      });
+
+      }
+    
 
   
 

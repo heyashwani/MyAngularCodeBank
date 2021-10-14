@@ -48,28 +48,28 @@ export class LoginComponent implements OnInit {
       this.userService.LoaderDisplay.emit(true);
       this.userService.LoaderDisplay.emit(false);
         this.router.navigate(['home']);
-      this.service2.userLogin(this.userDetail).subscribe(data=>{
+      // this.service2.userLogin(this.userDetail).subscribe(data=>{
           
-        this.res = data;
+      //   this.res = data;
 
         
         
-        if(this.res.message == "Successful")
-        {
+      //   if(this.res.message == "Successful")
+      //   {
           
-         this.userService.myVar = "true";
-         sessionStorage.setItem("routerFlag","true");
-         this.userService.LoaderDisplay.emit(false);
-          this.router.navigate(['home']);
-        }
-        else
-        {
-          // this.userService.myVar = false;
-          this.userService.LoaderDisplay.emit(false);
-          console.log(this.res.message);
-        }
+      //    this.userService.myVar = "true";
+      //    sessionStorage.setItem("routerFlag","true");
+      //    this.userService.LoaderDisplay.emit(false);
+      //     this.router.navigate(['home']);
+      //   }
+      //   else
+      //   {
+         
+      //     this.userService.LoaderDisplay.emit(false);
+      //     console.log(this.res.message);
+      //   }
         
-      });
+      // });
       console.log("promise testing");
 
   }

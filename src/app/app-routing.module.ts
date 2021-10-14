@@ -47,6 +47,7 @@ import { LightboxComponent } from './lightbox/lightbox.component';
 import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
 import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
+import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
 
 
 
@@ -245,6 +246,10 @@ const routes: Routes = [
 	{
 		path: 'voiceRecognition', 
 		component: VoiceRecognitionComponent
+	},
+	{
+		path: 'virtual-scroll', 
+		component: VirtualScrollComponent
 	},
 	{
 		path: '**',

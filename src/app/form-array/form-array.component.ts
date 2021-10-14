@@ -48,7 +48,7 @@ export class FormArrayComponent implements OnInit {
         childDetails:this.travelerForm.get('childRow').value
         
     }
-    console.log("--->>" + JSON.stringify(dataForReq));
+    console.log("--->>", JSON.stringify(dataForReq));
   }
 
 }

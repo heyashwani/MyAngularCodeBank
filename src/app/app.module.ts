@@ -83,8 +83,9 @@ import { ScrollResizeComponent } from './scroll-resize/scroll-resize.component';
 import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
-
-
+import { NgxCsvParserModule } from 'ngx-csv-parser';
+import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -142,6 +143,7 @@ import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition
     ScrollResizeComponent,
     RecaptchaComponent,
     VoiceRecognitionComponent,
+    VirtualScrollComponent,
    
   ],
   imports: [
@@ -166,7 +168,8 @@ import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition
     CarouselModule.forRoot(),
     AccordionModule.forRoot(),
     NgxCaptchaModule,
-    
+    NgxCsvParserModule,
+    VirtualScrollerModule
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
