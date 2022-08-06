@@ -5,10 +5,20 @@ import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
 import { Observable } from 'rxjs/Observable';
 
+function _window() : any {
+  // return the global native browser window object
+  return window;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class Service2Service {
+
+  get nativeWindow() : any {
+    return _window();
+ }
+ 
   name = ["ashwani","kumar"];
   
   tit:"ashwani"
@@ -60,6 +70,9 @@ export class Service2Service {
     menu43:{id:'43',title:'Voice Recognition',url:'http://localhost:4200/product/voiceRecognition',url1:'voiceRecognition'},
     menu44:{id:'44',title:'Virtual Scroll',url:'http://localhost:4200/virtual-scroll',url1:'virtual-scroll'},
     menu45:{id:'45',title:'Chips',url:'http://localhost:4200/chips',url1:'chips'},
+    menu46:{id:'46',title:'Razorpay',url:'http://localhost:4200/razorpay',url1:'razorpay'},
+    menu47:{id:'47',title:'Paypal',url:'http://localhost:4200/paypal',url1:'paypal'},
+    menu48:{id:'48',title:'Multi Form Concept 2',url:'http://localhost:4200/Multi-Form-Concept2',url1:'Multi-Form-Concept2'},
     
     
     
@@ -113,6 +126,9 @@ sideMenu = [
   this.sdMenu.menu43,
   this.sdMenu.menu44,
   this.sdMenu.menu45,
+  this.sdMenu.menu46,
+  this.sdMenu.menu47,
+  this.sdMenu.menu48,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";

@@ -89,6 +89,9 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { ChipsComponent } from './chips/chips.component';
 import { TagInputModule } from 'ngx-chips';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { RazorpayComponent } from './razorpay/razorpay.component';
+import { PaypalComponent } from './paypal/paypal.component';
+import { MultiForm2Component } from './multi-form2/multi-form2.component';
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -148,6 +151,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     VoiceRecognitionComponent,
     VirtualScrollComponent,
     ChipsComponent,
+    RazorpayComponent,
+    PaypalComponent,
+    MultiForm2Component,
    
   ],
   imports: [

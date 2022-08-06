@@ -49,6 +49,9 @@ import { RecaptchaComponent } from './recaptcha/recaptcha.component';
 import { VoiceRecognitionComponent } from './voice-recognition/voice-recognition.component';
 import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
 import { ChipsComponent } from './chips/chips.component';
+import { RazorpayComponent } from './razorpay/razorpay.component';
+import { PaypalComponent } from './paypal/paypal.component';
+import { MultiForm2Component } from './multi-form2/multi-form2.component';
 
 
 
@@ -139,6 +142,10 @@ const routes: Routes = [
 	{
 		path: 'Multi-Form-Concept',
 		component: MultiFormConceptComponent
+	},
+	{
+		path: 'Multi-Form-Concept2',
+		component: MultiForm2Component
 	},
 	{
 		path: 'error-handling',
@@ -255,6 +262,14 @@ const routes: Routes = [
 	{
 		path: 'chips', 
 		component: ChipsComponent
+	},
+	{
+		path: 'razorpay', 
+		component:RazorpayComponent
+	},
+	{
+		path: 'paypal', 
+		component:PaypalComponent
 	},
 	{
 		path: '**',

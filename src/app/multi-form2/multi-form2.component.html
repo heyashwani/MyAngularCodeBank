@@ -1,0 +1,102 @@
+<section>
+	<div class="container">
+		<form [formGroup]="passForm" (submit)="onSubmit()"  class="p-4" >
+			<div class="form-group">
+			  <label>Name:</label>
+			  <input type="text" class="form-control" formControlName="name" >
+			</div>
+			<div class="form-group mt-3">
+				<label>Gender:</label>
+				<div class="form-check">
+					<label class="form-check-label">
+					  <input type="radio" class="form-check-input" value="MALE" formControlName="g_gender" >Male
+					</label>
+				  </div>
+				  <div class="form-check">
+					<label class="form-check-label">
+					  <input type="radio" class="form-check-input" value="FEMALE" formControlName="g_gender" >Female
+					</label>
+				  </div>
+				  <div class="form-check disabled">
+					<label class="form-check-label">
+					  <input type="radio" class="form-check-input" value="OTHER" formControlName="g_gender"  >Other
+					</label>
+				  </div>
+			</div>
+			
+			<h3 class="text-center">Children Detail</h3>
+			<div class="border p-5 bg-light" formArrayName="childRow" >
+				<article  *ngFor="let a of formArr().controls;let i = index" [formGroupName]="i" style="border:1px solid red;margin-bottom:15px;">
+				<!-- <article  *ngFor="let a of passForm.get('childRow')['controls'];let i = index" [formGroupName]="i"> -->
+				<div class="form-group">
+					<label class="abc">Relation</label>
+					<select class="form-control" formControlName="c_relation" >
+					  <option value="">Choose Relation</option>
+					  <option value="Son" >Son</option>
+					  <option value="Daughter" >Daughter</option>
+					</select>
+				  </div>
+				  <div class="form-group">
+					<label>Name</label>
+					<input type="text" class="form-control" formControlName="c_name"  />
+				  </div>
+				  <div class="form-group">
+					<label>Gender</label>
+					<div class="form-check-inline form-control">
+					  <label class="form-check-label">
+						<input type="radio" class="form-check-input" value="Male" formControlName="c_gender" /> Male
+					  </label>
+					  <label class="form-check-label">
+						<input type="radio" class="form-check-input" value="Female" formControlName="c_gender"  /> Femail
+					  </label>
+					  <label class="form-check-label">
+						<input type="radio" class="form-check-input" value="Other" formControlName="c_gender"  /> Other
+					  </label>
+					</div>
+				  </div>
+
+				  <div class="mt-3" style="text-align:right">
+					<button type="button" (click)="addRowSkill(i)">Add Skill +</button>
+				  </div>
+
+				  <aside formArrayName="skillRow" class="ml-4 border-left" style="padding-left: 25px;
+				  
+				  margin-left: 20px;
+				  margin-top: 15px;;">
+					<div *ngFor="let a of formArrSkill(i).controls;let ind = index" [formGroupName]="ind" style="border: 1px solid green;margin-bottom: 12px;">
+						<div class="form-group">
+							<label>Skill Name</label>
+							<input type="text" class="form-control" formControlName="skill_name"  />
+						</div>
+
+						<div class="form-group">
+							<label>Skill Code</label>
+							<input type="text" class="form-control" formControlName="skill_code"  />
+						</div>
+					</div>
+				  </aside>
+				  <!-- <div class="form-group">
+					<label>Available Documents</label>
+					<div class="form-check-inline form-control">
+					  <label class="form-check-label">
+						<input type="checkbox" class="form-check-input" value="Adhar Card" name="child_doc1"  /> Adhar Card
+					  </label>
+					  <label class="form-check-label">
+						<input type="checkbox" class="form-check-input" value="Passport" name="child_doc2"  /> Passport
+					  </label>
+					  <label class="form-check-label">
+						<input type="checkbox" class="form-check-input" value="Driving License" name="child_doc3"  /> Driving License
+					  </label>
+					</div>
+				  </div> -->
+				</article>
+			</div>
+			<div class="form-group mt-3">
+				<button class="btn btn-success" type="button" (click)="addRow()">Add Children +</button>
+			</div>
+			
+			<button type="submit" class="btn btn-primary d-block w-100 mb-5 mt-5">Submit</button>
+		</form>
+		  
+	</div>
+</section>
