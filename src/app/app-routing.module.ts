@@ -52,6 +52,9 @@ import { ChipsComponent } from './chips/chips.component';
 import { RazorpayComponent } from './razorpay/razorpay.component';
 import { PaypalComponent } from './paypal/paypal.component';
 import { MultiForm2Component } from './multi-form2/multi-form2.component';
+import { ParentReusableSliderComponent } from './parent-reusable-slider/parent-reusable-slider.component';
+import { PushNotificationFirebaseComponent } from './push-notification-firebase/push-notification-firebase.component';
+import { OtpFillerComponent } from './otp-filler/otp-filler.component';
 
 
 
@@ -270,6 +273,18 @@ const routes: Routes = [
 	{
 		path: 'paypal', 
 		component:PaypalComponent
+	},
+	{
+		path: 'parent-reusable-slider', 
+		component:ParentReusableSliderComponent
+	},
+	{
+		path: 'push-notification-firebase', 
+		component:PushNotificationFirebaseComponent
+	},
+	{
+		path: 'otp-filler', 
+		component:OtpFillerComponent
 	},
 	{
 		path: '**',

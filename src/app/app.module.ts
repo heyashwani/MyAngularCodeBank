@@ -92,7 +92,15 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { RazorpayComponent } from './razorpay/razorpay.component';
 import { PaypalComponent } from './paypal/paypal.component';
 import { MultiForm2Component } from './multi-form2/multi-form2.component';
+import { ReusableSliderComponent } from './reusable-slider/reusable-slider.component';
+import { ParentReusableSliderComponent } from './parent-reusable-slider/parent-reusable-slider.component';
+import { PushNotificationFirebaseComponent } from './push-notification-firebase/push-notification-firebase.component';
 
+import { environment } from "../environments/environment";
+import { initializeApp } from "firebase/app";
+import { OtpFillerComponent } from './otp-filler/otp-filler.component';
+initializeApp(environment.firebase);
+import { NgOtpInputModule } from  'ng-otp-input';
 // import { Guard2Guard } from './Guards/guard2.guard';
 
 @NgModule({
@@ -154,6 +162,10 @@ import { MultiForm2Component } from './multi-form2/multi-form2.component';
     RazorpayComponent,
     PaypalComponent,
     MultiForm2Component,
+    ReusableSliderComponent,
+    ParentReusableSliderComponent,
+    PushNotificationFirebaseComponent,
+    OtpFillerComponent,
    
   ],
   imports: [
@@ -181,7 +193,8 @@ import { MultiForm2Component } from './multi-form2/multi-form2.component';
     NgxCsvParserModule,
     VirtualScrollerModule,
     TagInputModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    NgOtpInputModule
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},

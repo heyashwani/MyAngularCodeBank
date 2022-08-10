@@ -73,6 +73,9 @@ export class Service2Service {
     menu46:{id:'46',title:'Razorpay',url:'http://localhost:4200/razorpay',url1:'razorpay'},
     menu47:{id:'47',title:'Paypal',url:'http://localhost:4200/paypal',url1:'paypal'},
     menu48:{id:'48',title:'Multi Form Concept 2',url:'http://localhost:4200/Multi-Form-Concept2',url1:'Multi-Form-Concept2'},
+    menu49:{id:'49',title:'Parent Reusable Slider',url:'http://localhost:4200/parent-reusable-slider',url1:'parent-reusable-slider'},
+    menu50:{id:'50',title:'Push-notification-firebase',url:'http://localhost:4200/push-notification-firebase',url1:'push-notification-firebase'},
+    menu51:{id:'51',title:'OTP Filler',url:'http://localhost:4200/otp-filler',url1:'otp-filler'},
     
     
     
@@ -129,6 +132,9 @@ sideMenu = [
   this.sdMenu.menu46,
   this.sdMenu.menu47,
   this.sdMenu.menu48,
+  this.sdMenu.menu49,
+  this.sdMenu.menu50,
+  this.sdMenu.menu51,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
