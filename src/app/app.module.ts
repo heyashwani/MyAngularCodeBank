@@ -101,6 +101,9 @@ import { initializeApp } from "firebase/app";
 import { OtpFillerComponent } from './otp-filler/otp-filler.component';
 initializeApp(environment.firebase);
 import { NgOtpInputModule } from  'ng-otp-input';
+import { ChatSystemComponent } from './chat-system/chat-system.component';
+import { CountdownComponent } from './countdown/countdown.component';
+import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
 // import { Guard2Guard } from './Guards/guard2.guard';
 
 @NgModule({
@@ -166,6 +169,9 @@ import { NgOtpInputModule } from  'ng-otp-input';
     ParentReusableSliderComponent,
     PushNotificationFirebaseComponent,
     OtpFillerComponent,
+    ChatSystemComponent,
+    CountdownComponent,
+    SearchRxjsComponent,
    
   ],
   imports: [

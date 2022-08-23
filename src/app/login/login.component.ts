@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
       this.userService.LoaderDisplay.emit(true);
       this.userService.LoaderDisplay.emit(false);
         this.router.navigate(['home']);
+        this.userService.myVar = "true";
       // this.service2.userLogin(this.userDetail).subscribe(data=>{
           
       //   this.res = data;

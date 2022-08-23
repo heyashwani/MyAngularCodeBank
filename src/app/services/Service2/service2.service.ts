@@ -5,6 +5,8 @@ import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
 import { Observable } from 'rxjs/Observable';
 
+import * as io from 'socket.io-client';
+
 function _window() : any {
   // return the global native browser window object
   return window;
@@ -14,6 +16,9 @@ function _window() : any {
   providedIn: 'root'
 })
 export class Service2Service {
+
+  socket:any;
+  readonly url:string = "http://localhost:4000"
 
   get nativeWindow() : any {
     return _window();
@@ -76,6 +81,9 @@ export class Service2Service {
     menu49:{id:'49',title:'Parent Reusable Slider',url:'http://localhost:4200/parent-reusable-slider',url1:'parent-reusable-slider'},
     menu50:{id:'50',title:'Push-notification-firebase',url:'http://localhost:4200/push-notification-firebase',url1:'push-notification-firebase'},
     menu51:{id:'51',title:'OTP Filler',url:'http://localhost:4200/otp-filler',url1:'otp-filler'},
+    menu52:{id:'52',title:'chat-system',url:'http://localhost:4200/chat-system',url1:'chat-system'},
+    menu53:{id:'53',title:'countdown',url:'http://localhost:4200/countdown',url1:'countdown'},
+    menu54:{id:'54',title:'Search Box RXJS with debounce time',url:'http://localhost:4200/searchRxjs',url1:'searchRxjs'},
     
     
     
@@ -135,11 +143,29 @@ sideMenu = [
   this.sdMenu.menu49,
   this.sdMenu.menu50,
   this.sdMenu.menu51,
+  this.sdMenu.menu52,
+  this.sdMenu.menu53,
+  this.sdMenu.menu54,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    this.socket = io.connect(this.url)
+  }
+
+  listen(eventName:string){
+    return new Observable((subscriber)=>{
+      this.socket.on(eventName, (data:any) =>{
+        subscriber.next(data)
+      })
+    })
+  }
+
+  emit(eventName:string, data:any){
+    this.socket.emit(eventName,data)
+  }
+
   getPosts():Observable<any>{
     
     return this.http.get('https://jsonplaceholder.typicode.com/posts')

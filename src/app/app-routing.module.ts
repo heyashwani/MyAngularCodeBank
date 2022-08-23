@@ -55,6 +55,9 @@ import { MultiForm2Component } from './multi-form2/multi-form2.component';
 import { ParentReusableSliderComponent } from './parent-reusable-slider/parent-reusable-slider.component';
 import { PushNotificationFirebaseComponent } from './push-notification-firebase/push-notification-firebase.component';
 import { OtpFillerComponent } from './otp-filler/otp-filler.component';
+import { ChatSystemComponent } from './chat-system/chat-system.component';
+import { CountdownComponent } from './countdown/countdown.component';
+import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
 
 
 
@@ -285,6 +288,18 @@ const routes: Routes = [
 	{
 		path: 'otp-filler', 
 		component:OtpFillerComponent
+	},
+	{
+		path: 'chat-system', 
+		component:ChatSystemComponent
+	},
+	{
+		path: 'countdown', 
+		component:CountdownComponent
+	},
+	{
+		path: 'searchRxjs', 
+		component:SearchRxjsComponent
 	},
 	{
 		path: '**',

@@ -74,3 +74,18 @@ header
 		z-index: 100;
 		cursor:pointer;
 	  }
+
+	  /* .send_box{
+		width:100%;
+		padding-top: 10px;;
+		padding-bottom: 10px;;
+		background-color: aquamarine;
+		text-align: right;
+	}
+	.coming_box{
+		width:100%;
+		padding-top: 10px;;
+		padding-bottom: 10px;;
+		background-color: rgb(104, 83, 224);
+		text-align: left;
+	} */

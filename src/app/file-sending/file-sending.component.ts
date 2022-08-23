@@ -32,7 +32,7 @@ export class FileSendingComponent implements OnInit {
   {
 
    
-    if(ev.target.files[0].size/1000>100){
+    if(ev.target.files[0].size/1000>500){
      
       alert("greater than 100kb");
     }
