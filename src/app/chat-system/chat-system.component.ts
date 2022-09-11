@@ -19,6 +19,7 @@ export class ChatSystemComponent implements OnInit {
     this.service2.listen('chat-message').subscribe((data:any)=>{
       console.log(data)
       this.msg = data.message
+      
 
       this.comingInsert(data.message)
 
