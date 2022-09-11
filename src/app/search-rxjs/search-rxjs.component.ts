@@ -12,6 +12,7 @@ import { Service2Service } from '../services/Service2/service2.service';
 export class SearchRxjsComponent implements OnInit, AfterViewInit {
 
   @ViewChild("myInput") myInput:ElementRef;
+  searchTerm: any;
   constructor(private service1:Service1Service,private userService:Service2Service) {
 
     this.service1.HeaderDisplay.emit(true);
@@ -30,7 +31,9 @@ export class SearchRxjsComponent implements OnInit, AfterViewInit {
     )
 
     searchTerm.subscribe((res:any)=>{
+      this.searchTerm = res
       console.log(res)
+      
 
       // now here your can call a function to fetch data from server and can send this value as a requested data in api
       

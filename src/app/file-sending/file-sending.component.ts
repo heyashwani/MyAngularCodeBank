@@ -31,10 +31,12 @@ export class FileSendingComponent implements OnInit {
   onFileChanged(ev)
   {
 
+    
+
    
     if(ev.target.files[0].size/1000>500){
      
-      alert("greater than 100kb");
+      alert("greater than 500kb");
     }
     else if(ev.target.files[0].type == "image/jpeg"){
 
@@ -46,6 +48,7 @@ export class FileSendingComponent implements OnInit {
 
       var reader = new FileReader();
       this.selectedFile = ev.target.files[0];
+      console.log("file details",this.selectedFile)
       reader.readAsDataURL(this.selectedFile); 
       reader.onload = (_event) => { 
         this.imgURL = reader.result; 

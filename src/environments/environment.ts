@@ -15,6 +15,9 @@ export const environment = {
     measurementId: "G-6P7B7KH5VZ",
     vapidKey: "BE16inU1UFVH7gr6nU8Klagc1DDLKxl7B9q1vNb4Y3ZJr8LwXTzDfJc234WJh6kqS4a0zZN2QLZZvm3NTCQdcjo"
   },
+  recaptcha: {
+    siteKey: '6Lf7UL0cAAAAAIt_m-d24WG4mA1XFPHE8yVckc5S',
+  },
 };
 
 /*

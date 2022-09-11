@@ -38,11 +38,13 @@ export class ScrollResizeComponent implements OnInit {
   }
 
   onWindowResize(event) {
+    
 
     if(event.target.innerWidth < 900){
    
       alert("window resize work condition true");
     }
+
     else{
       
     }

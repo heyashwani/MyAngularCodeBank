@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/Observable';
 
 import * as io from 'socket.io-client';
 
+
+
 function _window() : any {
   // return the global native browser window object
   return window;
@@ -84,6 +86,10 @@ export class Service2Service {
     menu52:{id:'52',title:'chat-system',url:'http://localhost:4200/chat-system',url1:'chat-system'},
     menu53:{id:'53',title:'countdown',url:'http://localhost:4200/countdown',url1:'countdown'},
     menu54:{id:'54',title:'Search Box RXJS with debounce time',url:'http://localhost:4200/searchRxjs',url1:'searchRxjs'},
+    menu55:{id:'55',title:'captchaV3',url:'http://localhost:4200/captchaV3',url1:'captchaV3'},
+    menu56:{id:'56',title:'Social Sharing',url:'http://localhost:4200/social_sharing',url1:'social_sharing'},
+    menu57:{id:'57',title:'password_match_validator',url:'http://localhost:4200/password_match_validator',url1:'password_match_validator'},
+    menu58:{id:'58',title:'Image Cropper',url:'http://localhost:4200/image_cropper',url1:'image_cropper'},
     
     
     
@@ -146,6 +152,10 @@ sideMenu = [
   this.sdMenu.menu52,
   this.sdMenu.menu53,
   this.sdMenu.menu54,
+  this.sdMenu.menu55,
+  this.sdMenu.menu56,
+  this.sdMenu.menu57,
+  this.sdMenu.menu58,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
@@ -227,7 +237,11 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
   }
 
   post(url,data){
-    let headers = new HttpHeaders({ 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaXNfcHJpbmNpcGxlIjowLCJ1c2VyX3R5cGUiOjEsInVzZXJfaWQiOjgsIm5nb19pZCI6MCwiaWF0IjoxNjM0MDMyMjQ2fQ.pKEiZQhFACU9AgorXy4dMbpwx3ZL78VwdS9yNDrf2PQ' });
+    let headers = new HttpHeaders({ 
+      'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaXNfcHJpbmNpcGxlIjowLCJ1c2VyX3R5cGUiOjEsInVzZXJfaWQiOjgsIm5nb19pZCI6MCwiaWF0IjoxNjM0MDMyMjQ2fQ.pKEiZQhFACU9AgorXy4dMbpwx3ZL78VwdS9yNDrf2PQ' 
+    });
+
+    
 
     return this.http.post(url,data,{headers:headers});
   }

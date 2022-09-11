@@ -8,8 +8,7 @@ export class OnlynumberDirective {
 
   constructor(private _el:ElementRef) { }
 
-  @HostListener('keypress',['$event']) isNumberKey(evt)
-  {
+  @HostListener('keypress',['$event']) isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode < 48 || charCode > 57){
       return false;

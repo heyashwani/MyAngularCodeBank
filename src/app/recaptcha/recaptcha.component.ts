@@ -14,9 +14,12 @@ import { ReCaptchaV3Service } from 'ngx-captcha';
 export class RecaptchaComponent implements OnInit {
 
   @ViewChild('captchaElem') captchaElem: ReCaptcha2Component;
-  key:string = "6Le_rAkbAAAAAE89OTBcDrx88-9DER9OcDMqOL9S";  //sitekey for recaptcha v2
-  // key:string = "6Le_vAsbAAAAAIXibleH4db5YqSv01Y56Yibv08r";  //sitekey for recaptcha v3
-  
+  // key:string = "6Le_rAkbAAAAAE89OTBcDrx88-9DER9OcDMqOL9S";  //sitekey for recaptcha v2
+  key:string = "6LesvKshAAAAAO-_CZQikn3tvgYBIMd0QB0h5krY";  //sitekey for recaptcha v3
+  size;
+  lang;
+  Dark;
+  type;
   protected aFormGroup: FormGroup;
 
   constructor(private userService:Service1Service,private formBuilder: FormBuilder,private reCaptchaV3Service: ReCaptchaV3Service) {
@@ -28,11 +31,7 @@ export class RecaptchaComponent implements OnInit {
       recaptcha: ['', Validators.required]
     });
 
-    // this.reCaptchaV3Service.execute(this.key, 'homepage', (token) => {
-    //   console.log('This is your token: ', token);
-    // }, {
-    //     useGlobalDomain: false
-    // });
+    
   }
 
   handleReset(): void {
@@ -55,4 +54,30 @@ export class RecaptchaComponent implements OnInit {
     this.captchaElem.resetCaptcha();
    }
 
+   handleError(){
+
+   }
+   badge;
+   recaptcha;
+
+   handleReady()
+{
+
+}
+
+  onSubmit(){
+    this.reCaptchaV3Service.execute(this.key, 'homepage', (token) => {
+      console.log('This is your token: ', token);
+    }, {
+        useGlobalDomain: false
+    });
+  }
+
+  send(){
+    this.reCaptchaV3Service.execute(this.key, 'homepage', (token) => {
+      console.log('This is your token: ', token);
+    }, {
+      useGlobalDomain: false // optional
+    });
+  }
 }

@@ -58,6 +58,10 @@ import { OtpFillerComponent } from './otp-filler/otp-filler.component';
 import { ChatSystemComponent } from './chat-system/chat-system.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
+import { CaptchaV3Component } from './captcha-v3/captcha-v3.component';
+import { SocialSharingComponent } from './social-sharing/social-sharing.component';
+import { PasswordMatchValidatorComponent } from './password-match-validator/password-match-validator.component';
+import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 
 
 
@@ -65,7 +69,8 @@ const routes: Routes = [
 	
 	{ 
 		path: '', 
-		component: LoginComponent 
+		redirectTo:'login',
+		pathMatch:"full"
 	},
 	{ 
 		path: 'liveData', 
@@ -301,6 +306,23 @@ const routes: Routes = [
 		path: 'searchRxjs', 
 		component:SearchRxjsComponent
 	},
+	{
+		path: 'captchaV3', 
+		component:CaptchaV3Component
+	},
+	{
+		path: 'social_sharing', 
+		component:SocialSharingComponent
+	},
+	{
+		path: 'password_match_validator', 
+		component:PasswordMatchValidatorComponent
+	},
+	{
+		path: 'image_cropper', 
+		component:ImageCropperComponent
+	},
+	
 	{
 		path: '**',
 		component: PagenotfoundComponent  // it is called wildcard routing. always make this route in the end of all routes.

@@ -104,6 +104,13 @@ import { NgOtpInputModule } from  'ng-otp-input';
 import { ChatSystemComponent } from './chat-system/chat-system.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
+import { CaptchaV3Component } from './captcha-v3/captcha-v3.component';
+import { SocialSharingComponent } from './social-sharing/social-sharing.component';
+import { PasswordMatchValidatorComponent } from './password-match-validator/password-match-validator.component';
+import { ImageCropperComponent } from './image-cropper/image-cropper.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+
+
 // import { Guard2Guard } from './Guards/guard2.guard';
 
 @NgModule({
@@ -172,6 +179,10 @@ import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
     ChatSystemComponent,
     CountdownComponent,
     SearchRxjsComponent,
+    CaptchaV3Component,
+    SocialSharingComponent,
+    PasswordMatchValidatorComponent,
+    ImageCropperComponent,
    
   ],
   imports: [
@@ -200,11 +211,14 @@ import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
     VirtualScrollerModule,
     TagInputModule,
     NgMultiSelectDropDownModule.forRoot(),
-    NgOtpInputModule
+    NgOtpInputModule,
+    ImageCropperModule,
    
   ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },DatePipe],
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { } 

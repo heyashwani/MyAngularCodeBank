@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="border:1px solid red;">
   <figure>
     <img src="{{imgURL}}" alt="">
   </figure>
@@ -8,13 +8,13 @@
 </div>
 
 
-<div class="container">
+<div class="container" style="border:1px solid greenyellow;">
 
   <input type="file"  (change)="onFileChangedCsv($event)" />
   <button type="button" (click)="onUploadCsv()">Save Csv</button>
 </div>
 
-<div class="container">
+<div class="container" style="border:1px solid violet;">
   <h1 class="mt-4">TheRichPost.com</h1>
  
   <input class="form-control mb-5" type="file" class="upload" (change)="onFileChangedCsv($event.target.files)">
