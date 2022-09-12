@@ -19,9 +19,11 @@ export class ChatSystemComponent implements OnInit {
     this.service2.listen('chat-message').subscribe((data:any)=>{
       console.log(data)
       this.msg = data.message
-      
+
 
       this.comingInsert(data.message)
+
+      this.scrollToBottom()
 
     })
   }
@@ -37,14 +39,40 @@ export class ChatSystemComponent implements OnInit {
 
   myInsert(val){
     var h = document.getElementById("main");
-    h.insertAdjacentHTML("afterend", "<article class='send_box'><p>"+val+"</p></article>"); 
+    
+    let mainDiv = document.createElement('article')
+    mainDiv.classList.add('send_box')
+    let markup = `
+      <p>${val}</p>
+    `
+    mainDiv.innerHTML = markup
+    h.appendChild(mainDiv)
+
+    this.scrollToBottom()
     console.log("called")
   }
 
   comingInsert(val){
     var h = document.getElementById("main");
-    h.insertAdjacentHTML("afterend", "<aside class='coming_box'><p>"+val+"</p></aside>"); 
+
+    let mainDiv = document.createElement('aside')
+    mainDiv.classList.add('coming_box')
+    let markup = `
+      <h3></h3>
+      <p>${val}</p>
+    `
+    mainDiv.innerHTML = markup
+    h.appendChild(mainDiv)
+
+
+    // h.insertAdjacentHTML("afterend", "<aside class='coming_box'><p>"+val+"</p></aside>"); 
     console.log("called")
+
+  }
+
+  scrollToBottom(){
+    var h = document.getElementById("main");
+    h.scrollTop = h.scrollHeight
   }
 
 }
