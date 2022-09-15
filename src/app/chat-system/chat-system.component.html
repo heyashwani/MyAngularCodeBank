@@ -8,6 +8,11 @@
 </div>
 
 <div>
+  <img src="{{imgUrl}}" alt="">
+</div>
+
+<div>
+  <input type="file"  (change)="onFileChanged($event)" />
   <input type="text" #msgVal />
   <button type="button" (click)="sendMsg(msgVal.value)">Send Message</button>
   <!-- <h1>{{msg}}</h1> -->

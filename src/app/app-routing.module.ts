@@ -62,6 +62,8 @@ import { CaptchaV3Component } from './captcha-v3/captcha-v3.component';
 import { SocialSharingComponent } from './social-sharing/social-sharing.component';
 import { PasswordMatchValidatorComponent } from './password-match-validator/password-match-validator.component';
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
+import { MagnaticScrollComponent } from './magnatic-scroll/magnatic-scroll.component';
+import { PageRefreshComponent } from './page-refresh/page-refresh.component';
 
 
 
@@ -321,6 +323,14 @@ const routes: Routes = [
 	{
 		path: 'image_cropper', 
 		component:ImageCropperComponent
+	},
+	{
+		path: 'magnatic_scroll', 
+		component:MagnaticScrollComponent
+	},
+	{
+		path: 'page-refresh', 
+		component:PageRefreshComponent
 	},
 	
 	{

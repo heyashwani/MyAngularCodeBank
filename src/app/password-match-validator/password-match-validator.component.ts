@@ -12,12 +12,16 @@ export class PasswordMatchValidatorComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted: boolean = false;
+  uName: any;
 
   constructor(private fb: FormBuilder,private service1:Service1Service) {
     this.service1.HeaderDisplay.emit(true);
+
   }
 
   ngOnInit() {
+
+   
 
     this.registerForm = this.fb.group(
       {

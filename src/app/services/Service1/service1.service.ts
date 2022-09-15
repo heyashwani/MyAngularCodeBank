@@ -12,7 +12,8 @@ export class Service1Service {
   routerAuth = new EventEmitter<boolean>();
   // userName = new Subject<any>(); // in Subject we can't set initial value
   userName = new BehaviorSubject<any>('MyDefaultValue'); // in Subject we can set initial value
-
+  myUserName = new BehaviorSubject<any>('Default User'); // in Subject we can set initial value
+  
   
   constructor() { 
     this.myVar = sessionStorage.getItem("routerFlag");

@@ -90,6 +90,8 @@ export class Service2Service {
     menu56:{id:'56',title:'Social Sharing',url:'http://localhost:4200/social_sharing',url1:'social_sharing'},
     menu57:{id:'57',title:'password_match_validator',url:'http://localhost:4200/password_match_validator',url1:'password_match_validator'},
     menu58:{id:'58',title:'Image Cropper',url:'http://localhost:4200/image_cropper',url1:'image_cropper'},
+    menu59:{id:'59',title:'Magnatic Scroll',url:'http://localhost:4200/magnatic_scroll',url1:'magnatic_scroll'},
+    menu60:{id:'60',title:'Page Refresh',url:'http://localhost:4200/page-refresh',url1:'page-refresh'},
     
     
     
@@ -156,6 +158,8 @@ sideMenu = [
   this.sdMenu.menu56,
   this.sdMenu.menu57,
   this.sdMenu.menu58,
+  this.sdMenu.menu59,
+  this.sdMenu.menu60,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";

@@ -109,6 +109,8 @@ import { SocialSharingComponent } from './social-sharing/social-sharing.componen
 import { PasswordMatchValidatorComponent } from './password-match-validator/password-match-validator.component';
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { MagnaticScrollComponent } from './magnatic-scroll/magnatic-scroll.component';
+import { PageRefreshComponent } from './page-refresh/page-refresh.component';
 
 
 // import { Guard2Guard } from './Guards/guard2.guard';
@@ -183,6 +185,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     SocialSharingComponent,
     PasswordMatchValidatorComponent,
     ImageCropperComponent,
+    MagnaticScrollComponent,
+    PageRefreshComponent,
    
   ],
   imports: [

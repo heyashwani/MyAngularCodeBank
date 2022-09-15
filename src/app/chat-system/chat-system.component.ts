@@ -10,6 +10,8 @@ import { Service2Service } from '../services/Service2/service2.service';
 })
 export class ChatSystemComponent implements OnInit {
   msg: any;
+  selectedFile: any;
+  imgUrl: any;
 
   constructor(private userService:Service1Service,private service2:Service2Service) {
     this.userService.HeaderDisplay.emit(true);
@@ -19,6 +21,7 @@ export class ChatSystemComponent implements OnInit {
     this.service2.listen('chat-message').subscribe((data:any)=>{
       console.log(data)
       this.msg = data.message
+      this.imgUrl = data.img
 
 
       this.comingInsert(data.message)
@@ -31,7 +34,8 @@ export class ChatSystemComponent implements OnInit {
   sendMsg(val:any){
     this.service2.emit('chat-message',{
       username:"ashwani",
-      message:val
+      message:val,
+      img:this.selectedFile
   })
   this.myInsert(val)
   }
@@ -73,6 +77,21 @@ export class ChatSystemComponent implements OnInit {
   scrollToBottom(){
     var h = document.getElementById("main");
     h.scrollTop = h.scrollHeight
+  }
+
+
+  onFileChanged(ev)
+  {
+      console.log(this.selectedFile);
+
+      var reader = new FileReader();
+     
+      console.log("file details",this.selectedFile)
+      reader.readAsDataURL(ev.target.files[0]); 
+      reader.onload = (_event) => { 
+        this.selectedFile = reader.result; 
+      }
+  
   }
 
 }

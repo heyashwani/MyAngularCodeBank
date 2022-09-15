@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Service1Service } from '../services/Service1/service1.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { Service1Service } from '../services/Service1/service1.service';
 })
 export class SubjectComponent implements OnInit {
   uName:string;
-  constructor(private service1:Service1Service) {
+  constructor(private service1:Service1Service,private router:Router) {
     this.service1.HeaderDisplay.emit(true);
 
     this.service1.userName.subscribe((data)=>{
@@ -21,6 +22,14 @@ export class SubjectComponent implements OnInit {
 
   setUserName(data){
     this.service1.userName.next(data.value);
+  
   }
+
+  setMyUserName(){
+    this.service1.myUserName.next("Ruby Bharti")
+    
+  }
+
+  
 
 }
