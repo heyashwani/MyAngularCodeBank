@@ -12,6 +12,8 @@ import { getMessaging, getToken, onMessage } from "firebase/messaging";
 })
 export class AppComponent implements OnInit {
 
+	env:any = environment.envName;
+
 	message:any = null;
 
 	name:any;
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit {
 		 
   	}
   	ngOnInit(){
+
+		console.log("Environment",this.env) 
 
 		this.requestPermission();
     this.listen();
@@ -62,8 +66,9 @@ export class AppComponent implements OnInit {
 		 { vapidKey: environment.firebase.vapidKey}).then(
 		   (currentToken) => {
 			 if (currentToken) {
+				localStorage.setItem("notToken",currentToken)
 			   console.log("Hurraaa!!! we got the token.....");
-			   console.log(currentToken);
+			   console.log("current token",currentToken);
 			 } else {
 			   console.log('No registration token available. Request permission to generate one.');
 			 }

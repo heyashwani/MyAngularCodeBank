@@ -1,6 +1,7 @@
 
 import { Injectable, EventEmitter } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class Service1Service {
   myVar:string = "false";
   routerAuth = new EventEmitter<boolean>();
   // userName = new Subject<any>(); // in Subject we can't set initial value
-  userName = new BehaviorSubject<any>('MyDefaultValue'); // in Subject we can set initial value
+  userName = new BehaviorSubject<any>('MyDefaultValue'); // in Subject we can not set initial value
   myUserName = new BehaviorSubject<any>('Default User'); // in Subject we can set initial value
   
   

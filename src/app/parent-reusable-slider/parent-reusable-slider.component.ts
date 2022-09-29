@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
 import { Service2Service } from '../services/Service2/service2.service';
 
@@ -24,11 +24,22 @@ export class ParentReusableSliderComponent implements OnInit {
     },
   ] 
 
+  
+
+  
+
   constructor(private userService:Service2Service,private service1:Service1Service) { 
     this.service1.HeaderDisplay.emit(true);
   }
 
   ngOnInit() {
   }
+
+
+  showItem(newItem){
+    alert(newItem)
+  }
+
+  
 
 }

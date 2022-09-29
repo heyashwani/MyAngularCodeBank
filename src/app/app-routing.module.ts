@@ -64,6 +64,8 @@ import { PasswordMatchValidatorComponent } from './password-match-validator/pass
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { MagnaticScrollComponent } from './magnatic-scroll/magnatic-scroll.component';
 import { PageRefreshComponent } from './page-refresh/page-refresh.component';
+import { DatatableComponent } from './datatable/datatable.component';
+import { UnSavedChagesGuard } from './Guards/un-saved-chages.guard';
 
 
 
@@ -97,7 +99,7 @@ const routes: Routes = [
 	{ 
 		path: 'reactive-form', 
 		component: ReactiveFormComponent,
-		//canActivate:[AuthGuard] 
+		canDeactivate:[UnSavedChagesGuard] 
 	},
 	{ 
 		path: 'table-search', 
@@ -332,7 +334,10 @@ const routes: Routes = [
 		path: 'page-refresh', 
 		component:PageRefreshComponent
 	},
-	
+	{
+		path: 'datatable', 
+		component:DatatableComponent
+	},
 	{
 		path: '**',
 		component: PagenotfoundComponent  // it is called wildcard routing. always make this route in the end of all routes.

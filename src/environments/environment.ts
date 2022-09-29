@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  envName: 'development',
   firebase: {
     apiKey: "AIzaSyDDQr2RHt87P8KAaXyn0pp_jZy4UI1DmMo",
     authDomain: "ashwaninotificationproject.firebaseapp.com",

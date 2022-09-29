@@ -9,4 +9,5 @@ export class MypipePipe implements PipeTransform {
     return value.toLowerCase() + 'web designer';
   }
 
+
 }

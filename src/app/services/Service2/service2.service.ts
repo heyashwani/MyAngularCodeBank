@@ -92,6 +92,7 @@ export class Service2Service {
     menu58:{id:'58',title:'Image Cropper',url:'http://localhost:4200/image_cropper',url1:'image_cropper'},
     menu59:{id:'59',title:'Magnatic Scroll',url:'http://localhost:4200/magnatic_scroll',url1:'magnatic_scroll'},
     menu60:{id:'60',title:'Page Refresh',url:'http://localhost:4200/page-refresh',url1:'page-refresh'},
+    menu61:{id:'61',title:'Datatable',url:'http://localhost:4200/datatable',url1:'datatable'},
     
     
     
@@ -160,6 +161,7 @@ sideMenu = [
   this.sdMenu.menu58,
   this.sdMenu.menu59,
   this.sdMenu.menu60,
+  this.sdMenu.menu61,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
@@ -249,6 +251,18 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
 
     return this.http.post(url,data,{headers:headers});
   }
+
+  post1(url,data){
+    let headers = new HttpHeaders({ 
+      'Authorization': 'key=AAAAui5KpAA:APA91bGEXrLV3i5EFNXUiSYOUb0IjU341FFj8PQvZWUa8KNll0xZEVKzMhXZBELo50HVVZkQPxcbln7_VZvEqzXl7Nf4rtj7Fln8wp6GJxLvVfKkfp-W59ep3Ok1XEMogwqo0JhetLwX',
+      'Content-Type':'application/json'
+    });
+
+    
+
+    return this.http.post(url,data,{headers:headers});
+  }
+
   
 }
 

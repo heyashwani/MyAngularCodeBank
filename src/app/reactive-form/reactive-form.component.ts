@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CanComponentLeave } from '../Guards/un-saved-chages.guard';
 import { Service1Service } from '../services/Service1/service1.service';
 
 
@@ -9,7 +10,7 @@ import { Service1Service } from '../services/Service1/service1.service';
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent implements OnInit {
+export class ReactiveFormComponent implements OnInit,CanComponentLeave {
 
   regForm:FormGroup;
   
@@ -18,6 +19,8 @@ export class ReactiveFormComponent implements OnInit {
 
     this.service1.HeaderDisplay.emit(true);
   }
+
+  
 
   ngOnInit() {
 
@@ -44,6 +47,15 @@ export class ReactiveFormComponent implements OnInit {
       }
     }
     
+  }
+
+  canLeave():boolean{
+    if(this.regForm.controls.username.dirty){
+      return window.confirm("Do you want to leave before saving the changes?")
+    }
+    else{
+      return true;
+    }
   }
 
   

@@ -22,6 +22,26 @@ export class MagnaticScrollComponent implements OnInit {
   }
 
   
+  sendNotification(){
+   
+    var url = "https://fcm.googleapis.com/fcm/send";
+    var token = localStorage.getItem("notToken")
+    var data = {
+      notification: {
+      title: "First Notification", 
+      body: "Hello from Jishnu!!"
+      },
+      webpush: {
+        fcm_options: {
+          link: "https://www.w3schools.com/js/tryit.asp?filename=tryjs_callback5"
+        }
+      },
+      to:token
+  }
+    this.userService.post1(url,data).subscribe((res:any)=>{
+
+    })
+  }
 
 
 

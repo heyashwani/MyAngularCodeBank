@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-reusable-slider',
@@ -9,9 +9,17 @@ export class ReusableSliderComponent implements OnInit {
 
   @Input() imgDetails:any = []; // decorate the property with @Input()
 
+  //@Output
+  @Output() newItemEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  //@Output
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
   }
 
 }
