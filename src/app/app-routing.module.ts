@@ -66,6 +66,7 @@ import { MagnaticScrollComponent } from './magnatic-scroll/magnatic-scroll.compo
 import { PageRefreshComponent } from './page-refresh/page-refresh.component';
 import { DatatableComponent } from './datatable/datatable.component';
 import { UnSavedChagesGuard } from './Guards/un-saved-chages.guard';
+import { LogCreationComponent } from './log-creation/log-creation.component';
 
 
 
@@ -337,6 +338,10 @@ const routes: Routes = [
 	{
 		path: 'datatable', 
 		component:DatatableComponent
+	},
+	{
+		path: 'log-creation', 
+		component:LogCreationComponent
 	},
 	{
 		path: '**',

@@ -1,3 +1,10 @@
 <p>
   datatable works!
 </p>
+
+<div>
+  <button (click)="loadComp1()">Dynamic Component 1</button> &nbsp;
+  <button (click)="loadComp2()">Dynamic Component 2</button>
+</div>
+
+<ng-container *ngComponentOutlet="myVar"></ng-container>

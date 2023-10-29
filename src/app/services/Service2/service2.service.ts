@@ -93,6 +93,7 @@ export class Service2Service {
     menu59:{id:'59',title:'Magnatic Scroll',url:'http://localhost:4200/magnatic_scroll',url1:'magnatic_scroll'},
     menu60:{id:'60',title:'Page Refresh',url:'http://localhost:4200/page-refresh',url1:'page-refresh'},
     menu61:{id:'61',title:'Datatable',url:'http://localhost:4200/datatable',url1:'datatable'},
+    menu62:{id:'62',title:'Log Creation',url:'http://localhost:4200/log-creation',url1:'log-creation'},
     
     
     
@@ -162,12 +163,13 @@ sideMenu = [
   this.sdMenu.menu59,
   this.sdMenu.menu60,
   this.sdMenu.menu61,
+  this.sdMenu.menu62,
 ];
 
 baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
 
   constructor(private http:HttpClient) { 
-    this.socket = io.connect(this.url)
+    this.socket = io.connect(this.url) 
   }
 
   listen(eventName:string){
@@ -238,7 +240,13 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
 
   get(url:any){
     let headers = new HttpHeaders({ 'responseType': 'text' });
-    return this.http.get(url,{responseType: 'text'});
+    return this.http.get(url);
+    
+  }
+  
+  postNew(url,data){
+
+    return this.http.post(url,data);
     
   }
 
@@ -246,8 +254,6 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
     let headers = new HttpHeaders({ 
       'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaXNfcHJpbmNpcGxlIjowLCJ1c2VyX3R5cGUiOjEsInVzZXJfaWQiOjgsIm5nb19pZCI6MCwiaWF0IjoxNjM0MDMyMjQ2fQ.pKEiZQhFACU9AgorXy4dMbpwx3ZL78VwdS9yNDrf2PQ' 
     });
-
-    
 
     return this.http.post(url,data,{headers:headers});
   }
@@ -257,13 +263,8 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
       'Authorization': 'key=AAAAui5KpAA:APA91bGEXrLV3i5EFNXUiSYOUb0IjU341FFj8PQvZWUa8KNll0xZEVKzMhXZBELo50HVVZkQPxcbln7_VZvEqzXl7Nf4rtj7Fln8wp6GJxLvVfKkfp-W59ep3Ok1XEMogwqo0JhetLwX',
       'Content-Type':'application/json'
     });
-
-    
-
     return this.http.post(url,data,{headers:headers});
   }
-
-  
 }
 
 

@@ -112,6 +112,9 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { MagnaticScrollComponent } from './magnatic-scroll/magnatic-scroll.component';
 import { PageRefreshComponent } from './page-refresh/page-refresh.component';
 import { DatatableComponent } from './datatable/datatable.component';
+import { DynamicDemo1Component } from './dynamic-demo1/dynamic-demo1.component';
+import { DynamicDemo2Component } from './dynamic-demo2/dynamic-demo2.component';
+import { LogCreationComponent } from './log-creation/log-creation.component';
 
 
 // import { Guard2Guard } from './Guards/guard2.guard';
@@ -189,6 +192,9 @@ import { DatatableComponent } from './datatable/datatable.component';
     MagnaticScrollComponent,
     PageRefreshComponent,
     DatatableComponent,
+    DynamicDemo1Component,
+    DynamicDemo2Component,
+    LogCreationComponent,
    
   ],
   imports: [
@@ -221,6 +227,7 @@ import { DatatableComponent } from './datatable/datatable.component';
     ImageCropperModule,
    
   ],
+  entryComponents: [ DynamicDemo1Component,DynamicDemo2Component ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
     DatePipe

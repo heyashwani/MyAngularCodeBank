@@ -12,6 +12,7 @@ export class VirtualScrollComponent implements OnInit {
   items: any = [];
   showDiv: boolean = false;
   currentPage:number = 1;
+  totalPages: number;
 
   constructor(private service1:Service1Service,private userService:Service2Service) {
 
@@ -24,28 +25,16 @@ export class VirtualScrollComponent implements OnInit {
   }
 
   getData(){
-    var url = "http://13.235.218.182:6262/api/v7/user/fetch_student_list";
-     var req = {
-      
-        "type": 1,
-        "page": String(this.currentPage),
-        "interest": "",
-        "gender": "",
-        "age": "",
-        "ngo": "",
-        "date": "",
-        "issuedLogin": "",
-        "search": "",
-        "orderType": "",
-        "order": ""
-    
-     }
-    this.userService.post(url,req).subscribe((data:any)=>{
-      this.items = data.result;
+    var url = "https://reqres.in/api/users?page=" + this.currentPage
+     
+    this.userService.get(url).subscribe((data:any)=>{
+      this.items = data.data;
+      this.totalPages = data.total_pages
       
       this.showDiv = true;
       console.log(this.items);
     })  
+
   }
 
   fetchMore(event:any){
@@ -59,29 +48,17 @@ export class VirtualScrollComponent implements OnInit {
     else{
       return;
     }
-        
-        
+       
   }
 
    fetchNextChunk() {
-     var url = "http://13.235.218.182:6262/api/v7/user/fetch_student_list";
-     var req = {
-      
-        "type": 1,
-        "page": String(this.currentPage),
-        "interest": "",
-        "gender": "",
-        "age": "",
-        "ngo": "",
-        "date": "",
-        "issuedLogin": "",
-        "search": "",
-        "orderType": "",
-        "order": ""
-    
+     if(this.currentPage > this.totalPages){
+        return false
      }
-      this.userService.post(url,req).subscribe((chunk:any)=>{
-        this.items = this.items.concat(chunk.result);
+     var url = "https://reqres.in/api/users?page=" + this.currentPage
+     
+      this.userService.get(url).subscribe((chunk:any)=>{
+        this.items = this.items.concat(chunk.data);
         
         
         

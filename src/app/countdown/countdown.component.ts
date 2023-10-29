@@ -27,7 +27,7 @@ export class CountdownComponent implements OnInit {
   }
 
   countDownTimer(){
-    var futureDate = new Date("Aug 28 2022 15:30:00").getTime();
+    var futureDate = new Date("Oct 21 2023 15:30:00").getTime();
     var today = new Date().getTime();
     var distance = futureDate - today;
     this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -35,8 +35,6 @@ export class CountdownComponent implements OnInit {
     this.mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
     this.secs = Math.floor((distance % (1000 * 60)) / (1000))
     console.log(this.days)
-
-
   }
 
 }

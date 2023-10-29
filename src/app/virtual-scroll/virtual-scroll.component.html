@@ -2,7 +2,7 @@
 	<div class="row">
 		<virtual-scroller class="row" #scroll [items]="items" *ngIf="showDiv" (vsEnd)="fetchMore($event)">
 			<div class=" myclass"  *ngFor="let item of scroll.viewPortItems;let i=index">
-				{{i+1}}-{{item.name}}
+				{{item.first_name}}
 			</div>
 		</virtual-scroller>
 	</div>
