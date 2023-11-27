@@ -30,7 +30,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                     reason: error && error.error && error.error.reason ? error.error.reason : '',
                     status: error.status
                 };
-                alert(data);
+                // alert(data);
                 // this.errorDialogService.openDialog(data);
                 return throwError(error);
             }));

@@ -43,8 +43,8 @@ export class ImageCropperComponent implements OnInit {
       return (fetch(url)
           .then((res)=>{return res.arrayBuffer();})
           .then((buf)=>{return new File([buf], filename,{type:mimeType});})
-      );
-  }
+        );
+      }
 
   abc(){
     this.urltoFile(this.croppedImage, 'hello.txt','text/plain')

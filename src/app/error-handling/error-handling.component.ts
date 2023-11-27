@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { delay, retry, retryWhen, take, timeout } from 'rxjs/operators';
 import { Service1Service } from '../services/Service1/service1.service';
 import { Service2Service } from '../services/Service2/service2.service';
 
@@ -15,13 +16,24 @@ export class ErrorHandlingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service2.getPosts().subscribe((data)=>{
+    this.service2.getPosts()
+    .pipe(
+      // retry(5),
+      timeout(500), //this can time out http request
+      retryWhen((err:any) => err.pipe(
+        delay(3000),
+        take(5),
+      )
+      )
+      
+    )
+    .subscribe((data)=>{
       this.posts = data;
       console.log(this.posts);
       
     },(error)=>{
       this.err = error;
-      console.log(this.err);
+      console.log("error handling",this.err);
     }) 
 
     

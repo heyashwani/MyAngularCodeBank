@@ -93,7 +93,7 @@ export class Service2Service {
     menu59:{id:'59',title:'Magnatic Scroll',url:'http://localhost:4200/magnatic_scroll',url1:'magnatic_scroll'},
     menu60:{id:'60',title:'Page Refresh',url:'http://localhost:4200/page-refresh',url1:'page-refresh'},
     menu61:{id:'61',title:'Datatable',url:'http://localhost:4200/datatable',url1:'datatable'},
-    menu62:{id:'62',title:'Log Creation',url:'http://localhost:4200/log-creation',url1:'log-creation'},
+    menu62:{id:'62',title:'Log Creation & Individual Loader',url:'http://localhost:4200/log-creation',url1:'log-creation'},
     
     
     
