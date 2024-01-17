@@ -5,7 +5,15 @@
 	<span><div id="google_element"></div></span>
 	<ul class="navbar-nav ml-auto">
 		<li style="color:white;">{{myUserName}}</li>
+		<li class="nav-item">
+            <select #langSelect (change)="abc(langSelect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+                  {{ lang }}
+                </option>
+            </select>
+        </li>
 		<li ><button class="btn btn-danger"  (click) = "logout()">Logout</button></li>
 	</ul>
   <!-- <div>{{service1.name}}</div> -->
 </nav>
+

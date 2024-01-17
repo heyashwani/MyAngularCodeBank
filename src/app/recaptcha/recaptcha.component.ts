@@ -15,12 +15,12 @@ export class RecaptchaComponent implements OnInit {
 
   @ViewChild('captchaElem') captchaElem: ReCaptcha2Component;
   // key:string = "6Le_rAkbAAAAAE89OTBcDrx88-9DER9OcDMqOL9S";  //sitekey for recaptcha v2
-  key:string = "6LesvKshAAAAAO-_CZQikn3tvgYBIMd0QB0h5krY";  //sitekey for recaptcha v3
+  key:string = "6Le_vAsbAAAAAIXibleH4db5YqSv01Y56Yibv08r";  //sitekey for recaptcha v3
   size;
   lang;
   Dark;
   type;
-  protected aFormGroup: FormGroup;
+   aFormGroup: FormGroup;
 
   constructor(private userService:Service1Service,private formBuilder: FormBuilder,private reCaptchaV3Service: ReCaptchaV3Service) {
     this.userService.HeaderDisplay.emit(true);

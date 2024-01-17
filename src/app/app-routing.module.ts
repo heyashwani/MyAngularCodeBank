@@ -55,7 +55,6 @@ import { MultiForm2Component } from './multi-form2/multi-form2.component';
 import { ParentReusableSliderComponent } from './parent-reusable-slider/parent-reusable-slider.component';
 import { PushNotificationFirebaseComponent } from './push-notification-firebase/push-notification-firebase.component';
 import { OtpFillerComponent } from './otp-filler/otp-filler.component';
-import { ChatSystemComponent } from './chat-system/chat-system.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
 import { CaptchaV3Component } from './captcha-v3/captcha-v3.component';
@@ -67,6 +66,10 @@ import { PageRefreshComponent } from './page-refresh/page-refresh.component';
 import { DatatableComponent } from './datatable/datatable.component';
 import { UnSavedChagesGuard } from './Guards/un-saved-chages.guard';
 import { LogCreationComponent } from './log-creation/log-creation.component';
+import { MyLangTranslationModule } from './my-lang-translation/my-lang-translation.module';
+import { ImageLoadingComponent } from './image-loading/image-loading.component';
+import { InternetSpeedComponent } from './internet-speed/internet-speed.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 
 
 
@@ -84,6 +87,10 @@ const routes: Routes = [
 	{ 
 		path: 'login', 
 		component: LoginComponent 
+	},
+	{
+		path:"lang",
+		loadChildren:'./my-lang-translation/my-lang-translation.module#MyLangTranslationModule',
 	},
 	{ 
 		path: 'sidebar', 
@@ -300,10 +307,6 @@ const routes: Routes = [
 		component:OtpFillerComponent
 	},
 	{
-		path: 'chat-system', 
-		component:ChatSystemComponent
-	},
-	{
 		path: 'countdown', 
 		component:CountdownComponent
 	},
@@ -342,6 +345,22 @@ const routes: Routes = [
 	{
 		path: 'log-creation', 
 		component:LogCreationComponent
+	},
+	{
+		path: 'image-loading', 
+		component:ImageLoadingComponent
+	},
+	{
+		path: 'internet-speed', 
+		component:InternetSpeedComponent
+	},
+	{
+		path: 'rxjs-operators', 
+		component:RxjsOperatorsComponent
+	},
+	{
+		path: 'blob-url', 
+		loadChildren:'./blob-url/blob-url.module#BlobUrlModule'
 	},
 	{
 		path: '**',

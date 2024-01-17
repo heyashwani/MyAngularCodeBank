@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { NgxCSVParserError } from 'ngx-csv-parser';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,11 @@ export class HomeComponent implements OnInit {
 
   csvRecords: any[] = [];
   header = true;
+  param = {value: 'world'};
   
   constructor(private userService:Service1Service,
-    private ngxCsvParser: NgxCsvParser) { 
+    private ngxCsvParser: NgxCsvParser,
+    public translate: TranslateService) { 
 
     this.userService.HeaderDisplay.emit(true);
     

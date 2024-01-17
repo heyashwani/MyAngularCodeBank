@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-table-search',
@@ -29,7 +30,7 @@ export class TableSearchComponent implements OnInit {
     this.studData.stud7,
     this.studData.stud8,
   ];
-  constructor(private service1:Service1Service) {
+  constructor(private service1:Service1Service,public translate: TranslateService) {
 
     this.service1.HeaderDisplay.emit(true);
    }

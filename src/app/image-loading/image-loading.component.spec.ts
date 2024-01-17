@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChatSystemComponent } from './chat-system.component';
+import { ImageLoadingComponent } from './image-loading.component';
 
-describe('ChatSystemComponent', () => {
-  let component: ChatSystemComponent;
-  let fixture: ComponentFixture<ChatSystemComponent>;
+describe('ImageLoadingComponent', () => {
+  let component: ImageLoadingComponent;
+  let fixture: ComponentFixture<ImageLoadingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatSystemComponent ]
+      declarations: [ ImageLoadingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChatSystemComponent);
+    fixture = TestBed.createComponent(ImageLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

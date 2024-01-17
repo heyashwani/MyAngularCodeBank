@@ -1,5 +1,6 @@
 
 import { Injectable, EventEmitter } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 
 
@@ -16,8 +17,12 @@ export class Service1Service {
   myUserName = new BehaviorSubject<any>('Default User'); // in Subject we can set initial value
   
   
-  constructor() { 
+  constructor(public translate: TranslateService) { 
     this.myVar = sessionStorage.getItem("routerFlag");
+
+    translate.addLangs(['en', 'hi']);
+    translate.setDefaultLang('en');
+    translate.use('hi');
   }
   
 
@@ -34,7 +39,10 @@ export class Service1Service {
     askLoader.classList.add('ask_loader')
     let markup = `
       <figure>
-        <img src="assets/images/loader.gif" />
+      <div class="spinner-grow spinner-grow-sm"></div>
+      <div class="spinner-grow spinner-grow-sm"></div>
+      <div class="spinner-grow spinner-grow-sm"></div>
+        
       </figure>
     `
     askLoader.innerHTML = markup
@@ -45,6 +53,11 @@ export class Service1Service {
     const mainContainer = document.getElementById(id);
     const askLoader = mainContainer.querySelector('.ask_loader')
     askLoader.remove();
+  }
+
+  changeLang(data:any){
+    this.translate.use(data)
+    console.log(data)
   }
   
 }

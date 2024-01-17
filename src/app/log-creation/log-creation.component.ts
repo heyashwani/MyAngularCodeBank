@@ -24,15 +24,7 @@ export class LogCreationComponent implements OnInit {
     
   }
 
-  createLog(){
-    const url = "http://localhost:3000/";
-    let data = {
-      name:"Rohan234"
-    }
-    this.service2.postNew(url,data).subscribe((res:any)=>{
-      alert(res.msg)
-    })
-  }
+  
 
   getData1(){
     const url = "https://jsonplaceholder.typicode.com/photos"

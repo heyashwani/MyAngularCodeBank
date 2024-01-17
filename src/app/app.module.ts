@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -101,7 +101,6 @@ import { initializeApp } from "firebase/app";
 import { OtpFillerComponent } from './otp-filler/otp-filler.component';
 initializeApp(environment.firebase);
 import { NgOtpInputModule } from  'ng-otp-input';
-import { ChatSystemComponent } from './chat-system/chat-system.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { SearchRxjsComponent } from './search-rxjs/search-rxjs.component';
 import { CaptchaV3Component } from './captcha-v3/captcha-v3.component';
@@ -115,7 +114,15 @@ import { DatatableComponent } from './datatable/datatable.component';
 import { DynamicDemo1Component } from './dynamic-demo1/dynamic-demo1.component';
 import { DynamicDemo2Component } from './dynamic-demo2/dynamic-demo2.component';
 import { LogCreationComponent } from './log-creation/log-creation.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ImageLoadingComponent } from './image-loading/image-loading.component';
+import { InternetSpeedComponent } from './internet-speed/internet-speed.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 // import { Guard2Guard } from './Guards/guard2.guard';
 
@@ -182,7 +189,7 @@ import { LogCreationComponent } from './log-creation/log-creation.component';
     ParentReusableSliderComponent,
     PushNotificationFirebaseComponent,
     OtpFillerComponent,
-    ChatSystemComponent,
+    
     CountdownComponent,
     SearchRxjsComponent,
     CaptchaV3Component,
@@ -195,6 +202,9 @@ import { LogCreationComponent } from './log-creation/log-creation.component';
     DynamicDemo1Component,
     DynamicDemo2Component,
     LogCreationComponent,
+    ImageLoadingComponent,
+    InternetSpeedComponent,
+    RxjsOperatorsComponent,
    
   ],
   imports: [
@@ -225,12 +235,19 @@ import { LogCreationComponent } from './log-creation/log-creation.component';
     NgMultiSelectDropDownModule.forRoot(),
     NgOtpInputModule,
     ImageCropperModule,
-   
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
+  exports:[],
   entryComponents: [ DynamicDemo1Component,DynamicDemo2Component ],
   providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
-    DatePipe
+    DatePipe,Service1Service
   ],
   bootstrap: [AppComponent]
 })
