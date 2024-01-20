@@ -363,6 +363,10 @@ const routes: Routes = [
 		loadChildren:'./blob-url/blob-url.module#BlobUrlModule'
 	},
 	{
+		path: 'change-landing-module', 
+		loadChildren:'./change-landing-moudle-in-angular/change-landing-moudle-in-angular.module#ChangeLandingMoudleInAngularModule'
+	},
+	{
 		path: '**',
 		component: PagenotfoundComponent  // it is called wildcard routing. always make this route in the end of all routes.
 	},

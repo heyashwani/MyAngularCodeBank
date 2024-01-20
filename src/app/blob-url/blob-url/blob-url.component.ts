@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Service1Service } from 'src/app/services/Service1/service1.service';
+declare var window:any;
+
 
 @Component({
   selector: 'app-blob-url',

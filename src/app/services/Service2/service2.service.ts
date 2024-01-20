@@ -96,6 +96,8 @@ export class Service2Service {
     {id:'64',title:'Check Internet Speed',url:'http://localhost:4200/internet-speed',url1:'internet-speed'},
     {id:'64',title:'RXJS Operators',url:'http://localhost:4200/rxjs-operators',url1:'rxjs-operators'},
     {id:'65',title:'blob-url',url:'http://localhost:4200/blob-url',url1:'blob-url'},
+    {id:'66',title:'change-landing-module',url:'http://localhost:4200/change-landing-module',url1:'change-landing-module'},
+    
     
     
     
