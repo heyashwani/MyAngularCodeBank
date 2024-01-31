@@ -97,6 +97,8 @@ export class Service2Service {
     {id:'64',title:'RXJS Operators',url:'http://localhost:4200/rxjs-operators',url1:'rxjs-operators'},
     {id:'65',title:'blob-url',url:'http://localhost:4200/blob-url',url1:'blob-url'},
     {id:'66',title:'change-landing-module',url:'http://localhost:4200/change-landing-module',url1:'change-landing-module'},
+    {id:'67',title:'before-can-leave',url:'http://localhost:4200/before-can-leave',url1:'before-can-leave'},
+    {id:'67',title:'For SSR',url:'http://localhost:4200/for-ssr',url1:'for-ssr'},
     
     
     
@@ -119,7 +121,7 @@ baseUrl = "https://imashwani.000webhostapp.com/MyAngularCodeBank_Api/";
 
   getPosts():Observable<any>{
     
-    return this.http.get('https://jsonplaceholder.typicode.com/post');
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
   xyz()
   {

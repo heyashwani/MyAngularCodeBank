@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
 import { Service2Service } from '../services/Service2/service2.service';
 import { concatMap, delay, map, retry, retryWhen, take, timeout } from 'rxjs/operators';
-import { forkJoin, from, of } from 'rxjs';
+import { forkJoin, from, interval, merge, of } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rxjs-operators',
@@ -17,11 +18,15 @@ export class RxjsOperatorsComponent implements OnInit {
 
 
   constructor(private service1:Service1Service,
-    private _service2:Service2Service) { 
+    private _service2:Service2Service,
+    private route:ActivatedRoute) { 
     this.service1.HeaderDisplay.emit(true);
   }
 
   ngOnInit() {
+    let sub = this.route.data.subscribe((v:any) =>{
+      console.log(v)
+    } );
   }
 
 
@@ -85,6 +90,7 @@ export class RxjsOperatorsComponent implements OnInit {
     source.subscribe(val => console.log("this is from of ope",val));
   }
 
+  //from Ope
   fromOpe(){
     let source = from(['🐦', '😺', '🐕', '🐊']);
 
@@ -92,6 +98,7 @@ export class RxjsOperatorsComponent implements OnInit {
 
   }
 
+  //map ope
   mapOpe(){
     this._service2.get("https://jsonplaceholder.typicode.com/user")
     .pipe(
@@ -123,6 +130,7 @@ export class RxjsOperatorsComponent implements OnInit {
   }
 
 
+  //concatmap ope
   concatMapOpe(){
     this._service2.get("https://jsonplaceholder.typicode.com/users")
     .pipe(
@@ -146,6 +154,8 @@ export class RxjsOperatorsComponent implements OnInit {
     )
   }
 
+
+  //forkjoinope
   forkJoinOpe(){
     const observable1 = this._service2.get("https://dummyjson.com/products")
     const observable2 = this._service2.get("https://reqres.in/api/unknown")
@@ -157,8 +167,15 @@ export class RxjsOperatorsComponent implements OnInit {
 
   }
 
-  
 
-	
+  mergeOpe(){
+    const obs1 = this._service2.get("https://dummyjson.com/products")
+    const obs2 = this._service2.get("https://reqres.in/api/unknown")
+    
+    merge(obs1, obs2).subscribe(value => console.log("dt",value));
+  }
+
+  
+ 
 
 }

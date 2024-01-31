@@ -77,6 +77,7 @@ export class LiveDataComponent implements OnInit {
   }
 
 
+
   myFilter(){
     console.log(this.backupPost);
     this.posts = this.backupPost.filter(obj =>

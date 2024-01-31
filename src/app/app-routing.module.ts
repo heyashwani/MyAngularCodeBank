@@ -356,7 +356,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'rxjs-operators', 
-		component:RxjsOperatorsComponent
+		component:RxjsOperatorsComponent,
+		data: {some_data: 'some value'}
 	},
 	{
 		path: 'blob-url', 
@@ -365,6 +366,16 @@ const routes: Routes = [
 	{
 		path: 'change-landing-module', 
 		loadChildren:'./change-landing-moudle-in-angular/change-landing-moudle-in-angular.module#ChangeLandingMoudleInAngularModule'
+	},
+	{
+		path: 'before-can-leave', 
+		loadChildren:'./befor-can-leave/befor-can-leave.module#BeforCanLeaveModule',
+		
+	},
+	{
+		path: 'for-ssr', 
+		loadChildren:'./my-ssr/my-ssr.module#MySSRModule',
+		
 	},
 	{
 		path: '**',

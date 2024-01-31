@@ -37,6 +37,7 @@ export class PasswordMatchValidatorComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.registerForm)
   }
 
 }

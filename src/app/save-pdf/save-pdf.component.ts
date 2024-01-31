@@ -17,7 +17,7 @@ export class SavePdfComponent implements OnInit {
   ngOnInit() {
   }
 
-   printDiv(divName) {
+   printDiv() {
     var divContents = document.getElementById("print-section").innerHTML;
     var a = window.open('', '', 'height=500, width=500');
     a.document.write('<html>');

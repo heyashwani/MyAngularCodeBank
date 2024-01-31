@@ -245,9 +245,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   exports:[],
   entryComponents: [ DynamicDemo1Component,DynamicDemo2Component ],
-  providers: [Service1Service,Service2Service,Title,{provide: LocationStrategy, useClass: HashLocationStrategy},
+  providers: [Service1Service,Service2Service,Title,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
-    DatePipe,Service1Service
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

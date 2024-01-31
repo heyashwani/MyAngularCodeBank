@@ -12,17 +12,12 @@ export class OnlynumberDirective {
     var charCode = (evt.which) ? evt.which : evt.keyCode
     if (charCode < 48 || charCode > 57){
       return false;
-    }
-    else{
-      if(this._el.nativeElement.value.length >= 10)
-      {
+    }else{
+      if(this._el.nativeElement.value.length >= 10){
         return false;
-      }
-      else
-      {
+      }else{
         return true;
       }
-    
     }
   }
 

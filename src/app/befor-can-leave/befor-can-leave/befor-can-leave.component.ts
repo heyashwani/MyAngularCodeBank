@@ -1,16 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CanComponentLeave } from '../Guards/un-saved-chages.guard';
-import { Service1Service } from '../services/Service1/service1.service';
+import { Component, ElementRef, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CanComponentLeave } from 'src/app/Guards/un-saved-chages.guard';
+import { Service1Service } from 'src/app/services/Service1/service1.service';
 
-
-      
 @Component({
-  selector: 'app-reactive-form',
-  templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.css']
+  selector: 'app-befor-can-leave',
+  templateUrl: './befor-can-leave.component.html',
+  styleUrls: ['./befor-can-leave.component.css']
 })
-export class ReactiveFormComponent implements OnInit,CanComponentLeave {
+export class BeforCanLeaveComponent implements OnInit,CanComponentLeave {
 
   regForm:FormGroup;
   
@@ -19,11 +17,6 @@ export class ReactiveFormComponent implements OnInit,CanComponentLeave {
 
     this.service1.HeaderDisplay.emit(true);
   }
-
-
-  
-
-  
 
   ngOnInit() {
 
@@ -72,7 +65,6 @@ export class ReactiveFormComponent implements OnInit,CanComponentLeave {
     e.preventDefault();
     e.returnValue = 'test';
   }
-	
 
   
 

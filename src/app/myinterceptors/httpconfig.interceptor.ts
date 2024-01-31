@@ -14,13 +14,13 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log("interceptor called");
+        // console.log("interceptor called");
         // request = request.clone({ headers: request.headers.set('myAuthority', 'yyuutt') });
         // request = request.clone({ headers: request.headers.set('clientIdentity', 'xyz') });
         return next.handle(request).pipe(
             map((event: HttpEvent<any>) => {
                 if (event instanceof HttpResponse) {
-                    console.log('event--->>>', event);
+                    // console.log('event--->>>', event);
                 }
                 return event;
             }),

@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
 import { Service2Service } from '../services/Service2/service2.service';
 import { delay, map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { delay, map } from 'rxjs/operators';
   templateUrl: './image-loading.component.html',
   styleUrls: ['./image-loading.component.css']
 })
-export class ImageLoadingComponent implements OnInit,AfterViewInit {
+export class ImageLoadingComponent implements OnInit,AfterViewChecked {
 
   @ViewChildren('imgElem') imgElem1:QueryList<any>;
   
@@ -28,28 +28,9 @@ export class ImageLoadingComponent implements OnInit,AfterViewInit {
     
   }
 
-  ngAfterViewInit(): void {
-    
-    var logo = document.getElementById('abc');
-
-    logo.onload = function () {
-      // console.log(logo, "img loaded")   
-      
-  };
-  }
-
-  getData(){
-    this._service2.get("https://reqres.in/api/users?page=2").pipe(map((res:any)=>{
-      
-    for(let a of res.data){
-      a['avatar']="https://socialmediaxyz555.000webhostapp.com/assets/images/magnetic-hill-mountain-blue-sky-road-way-leh-ladakh-india.jpg"
-    }
-    
-    return res;
-  })).subscribe((res:any)=>{
-    this.imgData = res.data;
-
-    setTimeout(() => {
+ 
+  ngAfterViewChecked(): void {
+    if(this.imgElem1 !== undefined){
       var allImg = this.imgElem1.toArray()
       console.log(allImg,"ssssssss");
 
@@ -63,7 +44,23 @@ export class ImageLoadingComponent implements OnInit,AfterViewInit {
             a.nextElementSibling.classList.add("d-none");
         };
       }
-    }, 1000);
+    }
+  }
+
+  getData(){
+    this._service2.get("https://reqres.in/api/users?page=2")
+    .pipe(
+      map((res:any)=>{
+      
+      for(let a of res.data){
+        a['avatar']="https://socialmediaxyz555.000webhostapp.com/assets/images/magnetic-hill-mountain-blue-sky-road-way-leh-ladakh-india.jpg"
+      }
+      
+      return res;
+  })).subscribe((res:any)=>{
+    this.imgData = res.data;
+
+   
   })
   }
 
