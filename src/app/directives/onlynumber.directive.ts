@@ -21,4 +21,8 @@ export class OnlynumberDirective {
     }
   }
 
+  @HostListener('click') isNumberKey1(){
+    alert("click")
+  }
+
 }

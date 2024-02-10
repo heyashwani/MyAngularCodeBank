@@ -11,6 +11,24 @@ declare var $:any;
 })
 export class MySSRComponent implements OnInit {
 
+  studentData:any = [
+    {
+      name:"ak",
+      username:"heyak",
+      email:"ak@gmail.com"
+    },
+    {
+      name:"vk",
+      username:"heyak",
+      email:"vk@gmail.com"
+    },
+    {
+      name:"rk",
+      username:"heyak",
+      email:"rk@gmail.com"
+    },
+  ];
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object, //Step 1
     private service1:Service1Service
@@ -25,6 +43,26 @@ export class MySSRComponent implements OnInit {
       })
 
     }
+  }
+
+  addData(){
+    this.studentData = [
+      {
+        name:"ak",
+        username:"heyak",
+        email:"ak@gmail.com"
+      },
+      {
+        name:"vk",
+        username:"heyak",
+        email:"vk@gmail.com"
+      },
+      {
+        name:"rk",
+        username:"heyak",
+        email:"rk@gmail.com"
+      },
+    ];
   }
 
 }

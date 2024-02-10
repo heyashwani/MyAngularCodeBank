@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Service1Service } from '../services/Service1/service1.service';
 import { Service2Service } from '../services/Service2/service2.service';
 import { concatMap, delay, map, retry, retryWhen, take, timeout } from 'rxjs/operators';
-import { forkJoin, from, interval, merge, of } from 'rxjs';
+import { AsyncSubject, ReplaySubject, Subject, forkJoin, from, interval, merge, of } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
@@ -16,6 +16,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RxjsOperatorsComponent implements OnInit {
 
+  readonly replaySuject = new ReplaySubject(2)
+  readonly source = interval(1000); 
 
   constructor(private service1:Service1Service,
     private _service2:Service2Service,
@@ -27,6 +29,8 @@ export class RxjsOperatorsComponent implements OnInit {
     let sub = this.route.data.subscribe((v:any) =>{
       console.log(v)
     } );
+    
+
   }
 
 
@@ -175,7 +179,33 @@ export class RxjsOperatorsComponent implements OnInit {
     merge(obs1, obs2).subscribe(value => console.log("dt",value));
   }
 
+  intervalOpe1(){
+     
+    this.replaySuject.next(222)
+    this.replaySuject.next(333)
+    this.replaySuject.next(444)
+    this.replaySuject.next(555)
+    this.replaySuject.next(666)
+    this.replaySuject.next(777)
+    
+  }
+
+  intervalOpe2(){
+     
+    this.replaySuject.subscribe(e => {
+      console.log(`First Subscriber ${e}`)
+    })
+
+    
+   setTimeout(() => {
+    console.clear()
+    this.replaySuject.next(888)
+    this.replaySuject.next(999)
+    this.replaySuject.next(101010)
+   }, 3000);
+    
+  }
+
   
- 
 
 }

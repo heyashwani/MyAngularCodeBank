@@ -70,6 +70,7 @@ import { MyLangTranslationModule } from './my-lang-translation/my-lang-translati
 import { ImageLoadingComponent } from './image-loading/image-loading.component';
 import { InternetSpeedComponent } from './internet-speed/internet-speed.component';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { CanWeLoadGuard } from './Guards/can-we-load.guard';
 
 
 
@@ -375,8 +376,9 @@ const routes: Routes = [
 	{
 		path: 'for-ssr', 
 		loadChildren:'./my-ssr/my-ssr.module#MySSRModule',
-		
+		canActivate : [AuthGuard]
 	},
+
 	{
 		path: '**',
 		component: PagenotfoundComponent  // it is called wildcard routing. always make this route in the end of all routes.

@@ -6,3 +6,32 @@
   server side rendering. otherwise you will get errors like jquery not defined,
   window not defined, $ not defined etc. 
 </p>
+
+<button (click)="addData()">Click Me</button>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @for (item of studentData; track item.name) {
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.username}}</td>
+        <td>j{{item.email}}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td>data not found!</td>
+      </tr>
+    } -->
+    <tr *ngFor="let item of studentData">
+      <td>{{item.name}}</td>
+      <td>{{item.username}}</td>
+      <td>j{{item.email}}</td>
+    </tr>
+  </tbody>
+</table>
