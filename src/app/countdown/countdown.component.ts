@@ -21,6 +21,12 @@ export class CountdownComponent implements OnInit {
     setInterval(()=>{
       this.countDownTimer()
     },1000)
+
+  
+    //Step 2
+    // setInterval(()=>{
+    //   this.myDateTime()
+    // },1000)
   }
 
   countDownTimer(){
@@ -44,5 +50,27 @@ export class CountdownComponent implements OnInit {
 
     /// to confirm check on google, write "sweden current date time"
   }
+
+
+  
+//Step 1
+// this is the concept for we are accessing website in all over the world.
+// and we want to show a popup on a specific time(india time) 
+//assume an user visiting the website from Yakutsuk(Russia)
+// triggerTime:string = "20:28" //india time
+// flag:boolean = false
+// myDateTime(){
+//   const yakutsukDateTime = new Date();
+//   const indiaDateTime = yakutsukDateTime.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+//   const indiaDateTime1 = new Date(indiaDateTime);
+//   const time = `${indiaDateTime1.getHours()}:${indiaDateTime1.getMinutes()}`
+
+//   if(time == this.triggerTime && !this.flag){
+//     alert(time)
+//     this.flag = true
+//   }  
+// }
+
+
 
 }
