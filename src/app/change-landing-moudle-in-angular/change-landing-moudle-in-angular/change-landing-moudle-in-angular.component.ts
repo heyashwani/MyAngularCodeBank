@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Service1Service } from 'src/app/services/Service1/service1.service';
 
 @Component({
@@ -8,8 +9,17 @@ import { Service1Service } from 'src/app/services/Service1/service1.service';
 })
 export class ChangeLandingMoudleInAngularComponent implements OnInit {
 
-  constructor(private userService:Service1Service) {
-    this.userService.HeaderDisplay.emit(true);
+  unsafeContent: string = '<script>setTimeout(()=>{alert("Hello, world!");},3000)</script>'; // User input
+  sanitizedContent: SafeHtml;
+  item:boolean = true;
+
+  color:string = "green"
+  
+  constructor(private userService:Service1Service,
+    private sanitizer: DomSanitizer
+  ) {
+      this.userService.HeaderDisplay.emit(true);
+      this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.unsafeContent);
    }
 
   ngOnInit() {

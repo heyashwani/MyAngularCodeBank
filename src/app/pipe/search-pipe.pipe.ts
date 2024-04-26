@@ -18,6 +18,6 @@ export class SearchPipePipe implements PipeTransform {
     return value.filter(function(item){
         return JSON.stringify(item).toLowerCase().includes(args);
     });
-}
+  }
 
 }

@@ -7,9 +7,11 @@
 			<option value="{{a.value}}" *ngFor='let a of dropValueFilter'>{{a.displayValue}}</option>
 		</select>
 	</div>
+	<div class="text-end"><button class="btn btn-danger mb-3" *ngIf="showDelBtn">Delete</button></div>
 	<table class="table table-dark" id="employee_data">
 		<thead>
 			<tr>
+				<th><input type="checkbox" (change)="onCheckboxCheck($event)" /></th>
 				<th>User Id</th>
 				<th>Title</th>
 				<th>Id</th>
@@ -21,6 +23,8 @@
             itemsPerPage: 5,
             currentPage: page,
             totalItems: totalRecords }">
+				
+				<td><input type="checkbox" #listItem [checked]="a.checkbox" (change)="onSingleCheckboxClick($event,a.id)" /></td>
 				<td>{{a.userId}}</td>
 				<td>{{a.id}}</td>
 				<td>{{a.title}}</td>

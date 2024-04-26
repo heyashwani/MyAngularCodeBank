@@ -20,6 +20,7 @@ export class LiveDataComponent implements OnInit {
 
   page: number = 1;
   totalRecords:number = 100;
+  showDelBtn:number = 0;
 
   dropValueFilter:any = [
     {
@@ -56,14 +57,11 @@ export class LiveDataComponent implements OnInit {
     
     this.userService.getPosts().pipe(map(res=>{
       
+      
       for(let a of res){
-        a['myname']="Ashwani Bharti"
+        a["checkbox"] = false
       }
-      for(let a of res){
-        if(a.id == 13){
-          a.id = 12;
-        }
-      }
+      
       return res;
     })).subscribe((data)=>{
       this.posts = data;
@@ -75,6 +73,57 @@ export class LiveDataComponent implements OnInit {
     
     
   }
+
+
+  //multi checkbox functionality in table
+  onCheckboxCheck(ev:any){
+    console.log("ev",ev)
+    if(ev.target.checked){
+      let limit = 5;
+      let idsArray = [];
+      for(let i=0;i<limit;i++){
+        this.posts[i]["checkbox"] = true;
+        idsArray.push(this.posts[i].id)
+      }
+      this.showDelBtn = 1;
+      console.log("ids array ", idsArray)
+    }else{
+      let limit = 10;
+      for(let i=0;i<limit;i++){
+        this.posts[i]["checkbox"] = false
+      }
+      this.showDelBtn = 0;
+    }
+    
+  }
+
+  onSingleCheckboxClick(ev:any,id:number){
+    if(ev.target.checked){
+      for(let a of this.posts){
+        if(a.id == id){
+          a["checkbox"] = true
+        }
+      }
+    }else{
+      for(let a of this.posts){
+        if(a.id == id){
+          a["checkbox"] = false
+        }
+      }
+    }
+    console.log(this.posts)
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

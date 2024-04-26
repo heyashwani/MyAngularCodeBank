@@ -52,44 +52,7 @@ CreateCaptcha()
   
 }
 
-ValidateCaptcha() 
-{
-  var string1 = this.removeSpaces(this.cd);
-  var string2 = this.removeSpaces( $("#captcha_div").text());
-  if (string1 == string2) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
 
-// Remove Spaces
-removeSpaces(string) 
-{
-  return string.split(' ').join('');
-}
 
-// Check Captcha
-CheckCaptcha() 
-{
-  var result = this.ValidateCaptcha();
-  if( $("#UserCaptchaCode").val() == "" || $("#UserCaptchaCode").val() == null || $("#UserCaptchaCode").val() == "undefined") {
-    $('#WrongCaptchaError').text('Please enter code given below in a picture.').show();
-    $('#UserCaptchaCode').focus();
-  } else {
-    if(result == false) { 
-      $('#WrongCaptchaError').text('Invalid Captcha! Please try again.').show();
-      this.CreateCaptcha();
-      $('#UserCaptchaCode').focus().select();
-    }
-    else { 
-      $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
-      this.CreateCaptcha();
-      $('#WrongCaptchaError').fadeOut(100);
-      $('#SuccessMessage').fadeIn(500).css('display','block').delay(5000).fadeOut(250);
-    }
-  }  
-}
 
 }
