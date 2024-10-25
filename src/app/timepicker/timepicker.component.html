@@ -1,0 +1,10 @@
+<div class="mycard">
+	<div class="jumbotron">
+		Step1:"ng add ngx-bootstrap  --component timepicker" Run this command. <strong>when you run this cmd your module.ts and angular.ts will autometically updated.</strong><br />
+		Step2:Now add<strong> &lt;timepicker [(ngModel)]="mytime"&gt;&lt;/timepicker&gt;</strong> in your html component. nothing to be added in it's ts file. Dont worry..<br />
+		<strong>Note -> ngx-bootstrap uses bootstrap framework style and js. So make sure your project should have bootstrap framwork installed.</strong><br />
+		Note-> ngx-bootstrap has many component. For more information go to www.angular.io ->click on resources in header -> click on ngx-bootstrap in UI Component section.
+	</div>
+	<timepicker [(ngModel)]="mytime"></timepicker>
+	<pre class="alert alert-info">Time is: {{mytime}}</pre>
+</div>

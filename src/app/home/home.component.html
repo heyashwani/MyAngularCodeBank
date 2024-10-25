@@ -1,0 +1,37 @@
+<div class="jumbotron text-center">
+    <input type="text" value="ng build --output-path web-panel" id="myInput">
+    
+    <button (click)="copyText()" class="btn btn-primary">Copy text</button>
+  
+    Home works.
+</div>
+
+<div>
+    <input type="file" #fileImportInput (change)="fileChangeListener($event)">
+</div>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        
+        <label>
+          {{ "HOME.SELECT" | translate  }}
+          
+        </label>
+        <hr />
+        <h2>{{ "HOME.TITLE" | translate:param }}</h2>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

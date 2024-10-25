@@ -1,0 +1,23 @@
+<div class="col-md-6 offset-md-3 myform" ngNativeValidate>
+	<div class="imgcontainer" *ngIf="imgShow">
+		<img src="../../assets/images/user.png" alt="Avatar" class="avatar">
+	</div>
+	<div class="container">
+		<label for="uname"><b>Username</b></label>
+		<div>Username Hint:(name)</div>
+		<input type="text" placeholder="Enter Username" id="user" [(ngModel)]="username" >
+			
+		<label for="psw"><b>Password</b></label>
+		<div>Password Hint:(dob)</div>
+		<input type="password" placeholder="Enter Password" id="pass" [(ngModel)]="password" >
+			
+		
+		
+		
+		
+		<input type="submit" value="Login" (click)="loginUser()">
+		
+	</div>
+	<div><a routerLink="../register">Create New Account?</a></div>
+
+</div>

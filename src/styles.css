@@ -1,0 +1,93 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* @import "~@ng-select/ng-select/themes/material.theme.css"; */
+header
+{
+    width:100%;
+    height:80px;
+    background-color:gray;
+}
+.content_sec
+{
+    width:100%;
+    height:calc(100vh - 80px);
+    overflow: hidden;
+}
+
+
+.sidebar
+{
+    width:200px;
+    height:100%;
+    float: left;
+    background-color:blueviolet;
+}
+.right_panel
+{
+    height:100%;
+    float: left;
+    width:calc(100% - 200px);
+    overflow-y: auto;
+}
+.mycard
+{
+	padding:15px;
+}
+
+
+	#employee_data_wrapper.form-inline
+	{
+		display: block;
+	}
+	.dataTables_paginate .pagination
+	{
+		justify-content: flex-end;
+	}
+	.paginate_button a
+	{
+	    display: block;
+	    border: 1px solid #ddd;
+	    padding: 0px 7px;
+	    margin-left: 5px;
+	}
+	.paginate_button a:hover
+	{
+	    background-color: #007bff;
+	    border-color:#007bff;
+	    color:white;
+	    text-decoration: none;
+	}
+	@media (min-width: 576px)
+	{
+		.dataTables_length label 
+		{
+			justify-content: flex-start;
+		}	
+		.dataTables_filter label
+		{
+			justify-content: flex-end;
+		}
+	}
+
+
+	
+	.carousel-control-next, .carousel-control-prev{
+		z-index: 100;
+		cursor:pointer;
+	  }
+
+	  /* .send_box{
+		width:100%;
+		padding-top: 10px;;
+		padding-bottom: 10px;;
+		background-color: aquamarine;
+		text-align: right;
+	}
+	.coming_box{
+		width:100%;
+		padding-top: 10px;;
+		padding-bottom: 10px;;
+		background-color: rgb(104, 83, 224);
+		text-align: left;
+	} */
+
+	

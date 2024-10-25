@@ -1,0 +1,38 @@
+
+<div class="jumbotron" >
+  <p><strong>Here I am using carousel component of ngx-bootstrap For Compelet referenc  <a href="https://valor-software.com/ngx-bootstrap/#/documentation#getting-started" target="_blank">Click</a></strong></p>
+  <ul>
+    <li>Step 1: Run <strong>"ng add ngx-bootstrap  --component carousel"</strong>  command. This command will update your app.module.ts file. so there is no need to import anything in app.module.ts
+      <figure>
+        <img src="../../assets/images/carousel1.png"  class="img-fluid" alt="">
+      </figure>
+    </li>
+    <li>Step 2: Now simply follow it's .ts and html code.</li>
+  </ul>
+</div>
+
+
+
+<div>
+  <figure>
+    <img src="slides[0].image"  #mainImg alt="">
+  </figure>
+  <carousel [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="singleSlideOffset"
+          [interval]="false"
+          [noWrap]="noWrap">
+  <slide *ngFor="let slide of slides; let index=index">
+    <img [src]="slide.image" #mybox alt="image slide" (click)="abc(mybox)" style="display: block; width: 100%;">
+    <div class="carousel-caption">
+      <h4>Slide {{index}}</h4>
+    </div>
+  </slide>
+</carousel>
+</div>
+
+
+
+
+
+
+  

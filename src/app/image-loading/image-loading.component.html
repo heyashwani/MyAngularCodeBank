@@ -1,0 +1,16 @@
+<div class="container" style="min-height: 1200px;">
+  <div class="row" id="gallery">
+    <ng-container *ngFor="let a of imgData">
+      <div class="col-sm-4">
+        <figure>
+          <img #imgElem src="{{a.avatar}}" id="first" class="img-fluid"    >
+          <img src="assets/images/blur.jpg" class="except-me">
+        </figure>
+      </div>
+    </ng-container>
+    
+
+  </div>
+</div>
+
+<!-- <img id="abc" src="https://socialmediaxyz555.000webhostapp.com/assets/images/magnetic-hill-mountain-blue-sky-road-way-leh-ladakh-india.jpg" loading="lazy" alt=""> -->

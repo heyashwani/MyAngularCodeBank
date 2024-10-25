@@ -1,0 +1,77 @@
+@import "https://fonts.googleapis.com/css2?family=Alike+Angular&display=swap";
+
+fieldset 
+{ 
+    width:350px;
+    border: 1px solid #ccc; 
+    padding: 15px; 
+}
+
+.CaptchaTxtField 
+{ 
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 12px;
+    margin-bottom: 10px; 
+}
+.captcha_div
+{
+    width:80%;
+    height:50px;
+    float:left;
+	background-color: orange;
+    border: 1px solid black;
+    background-image: url(https://www.codeproject.com/KB/scripting/CreateCaptcha/1.JPG);
+    color: #949494;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+	user-select: none;
+	font-family: 'Alike Angular', serif;
+}
+
+.ReloadBtn 
+{ 
+    background: url(https://cdn3.iconfinder.com/data/icons/basic-interface/100/update-64.png) left top no-repeat;
+    background-size: 100%;
+    width: 37px;
+    height: 37px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+    border: none;
+}
+.btnSubmit 
+{
+  margin-top: 15px;
+  border: 0px;
+  padding: 10px 20px; 
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #1285c4;
+  color: #fff;
+  cursor: pointer;
+}
+
+.error 
+{ 
+  color: red; 
+  font-size: 12px; 
+  display: none; 
+}
+#SuccessMessage 
+{
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+
+
+
+
+

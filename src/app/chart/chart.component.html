@@ -1,0 +1,61 @@
+<div class="jumbotron">
+	<p><strong>I am creating this chart with the help of a online article. 
+		<a href="https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/" target="_blank">Complete Reference</a>
+	</strong></p>
+	<ul>
+		<li>Step 1: "npm install ng2-charts chart.js --save"</li>
+		<li>Step 2: Now update your app.module.ts like this
+			<figure>
+				<img src="../../assets/images/sc1.png" alt="">
+			</figure>
+		</li>
+		<li>Step 3: Now move your component's ts file and import libraries like this
+			<figure>
+				<img src="../../assets/images/sc2.png" alt="">
+			</figure>
+		</li>
+		<li>Step 4: Now Copy the ts code from article and paste in your ts file like this
+			<figure>
+				<img src="../../assets/images/sc3.png" alt="">
+			</figure>
+		</li>
+		<li>Step 5: Now update your html file like this
+			<figure>
+				<img src="../../assets/images/sc4.png" alt="">
+			</figure>
+		</li>
+		<li>Step 6: After Completion of step 5 our process is completed but i faced a problem in my .ts file 
+			and in running angular project. problem was this <strong>../../node_modules/chart.js/types/index.esm"' has no exported member named 'ChartDataSets'. Did you mean 'ChartDataset'?ts</strong>
+			After some R&D i got this issue was raised due to version mismatch of chart.js and ng2-charts with my angular cli version. You can check R&D result <a href="https://stackoverflow.com/questions/66936633/chart-js-ng2-charts-not-working-on-angular2" target="_blank">HERE</a>
+		</li>
+		<li>
+			Step 7: After my R&D i installed again chart.js using <strong>"npm install chart.js@2.9.3 --save"</strong>
+			and ng2-charts using <strong>"npm install ng2-charts@2.2.3 --save"</strong> Like this
+			<figure>
+				<img src="../../assets/images/sc5.png" alt="">
+			</figure>
+			<p>After this step my code is working well.</p>
+		</li>
+		<li>Note: Now our installation process is completed. For more graph and chart <a href="https://www.freakyjolly.com/angular-chart-js-tutorial-using-ng2-charts-with-examples/" target="_blank">Click Here</a></li>
+	</ul>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div style="width:800px;height:auto;border:4px solid red;">
+				<div class="chart-wrapper">
+				  <canvas baseChart 
+					  [datasets]="lineChartData" 
+					  [labels]="lineChartLabels" 
+					  [options]="lineChartOptions"
+					  [colors]="lineChartColors" 
+					  [legend]="lineChartLegend" 
+					  [chartType]="lineChartType" 
+					  [plugins]="lineChartPlugins">
+				  </canvas>
+				</div>
+			  </div>
+			  
+		</div>
+	</div>
+</div>

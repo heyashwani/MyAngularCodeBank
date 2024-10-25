@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row jumbotron">
+		<div class="col-sm-12 text-center">
+			<p>Enter a value here and that will be sent in page1 and page2 component with the help of <strong>Behaviour</strong></p>
+			<input type="text" #userValue >
+			<button (click)="setUserName(userValue)">Submit</button>
+		</div>
+		<div class="col-sm-12">
+			<p>For Complete Totourial <a href="https://youtu.be/Ft5aDAKuW5Y" target="_blank">Click Here</a></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<app-page1></app-page1>
+		</div>
+		<div class="col-sm-6">
+			<app-page2></app-page2>
+		</div>
+	</div>
+</div>
+
+<div><button type="button" (click)="setMyUserName()">Change myUserName</button></div>

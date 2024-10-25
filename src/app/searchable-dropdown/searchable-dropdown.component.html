@@ -1,0 +1,32 @@
+<div class="bg-light p-5">
+  <h3>For Complete Reference <a href="https://www.npmjs.com/package/@ng-select/ng-select" target="_blank">Click Here</a></h3>
+  <hr />
+  <h3>For Live Demo <a href="https://ng-select.github.io/ng-select#/data-sources" target="_blank">Click Here</a></h3>
+  <br /><br />
+  <strong>NOTE: If you are facing any problem please have a look on version and install a compatible version of dropdown
+    according to your project version using "<i>npm install --save @ng-select/ng-select@version</i>"</strong>
+</div>
+
+<div class="container mt-5 mb-5" >
+  <div class="row">
+    <div class="col-md-12">
+      <ng-select  [multiple]="true" [(ngModel)]="selectedCar" [selectOnTab]="true" appearance="underline">
+        <ng-option *ngFor="let car of cars" [disabled]="car.sutudData.data.isDisable" [value]="car.sutudData.data.id">{{car.sutudData.data.name}}</ng-option>
+      </ng-select>
+    </div>
+   
+    </div>
+  </div>
+
+  <ng-select #select  [searchable]="false"  >
+    <ng-option *ngFor="let a of cars">
+      {{a.sutudData.data.name}}
+    </ng-option>
+     <ng-template ng-header-tmp>
+         <input style="width: 100%; line-height: 24px" type="text" (input)="select.filter($event.target.value)"/>
+     </ng-template>
+ </ng-select>
+  <button (click)="abc()">clilck</button>
+
+
+

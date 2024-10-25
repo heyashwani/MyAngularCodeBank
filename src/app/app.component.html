@@ -1,0 +1,27 @@
+<div *ngIf="message;">
+	<h1>{{ message.notification.title }}</h1>
+	<h2>{{ message.notification.body }}</h2>
+  </div>
+  <div *ngIf="!message;">
+	No Message Arrived
+  </div>
+
+<header *ngIf="showHeader == true">
+    <app-header></app-header>
+</header>
+<section class="content_sec" [ngStyle]="{'height':showHeader ? '' : '100vh' }">
+    <div class="sidebar" *ngIf="showHeader == true">
+        
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="right_panel"  [ngClass]="showHeader? 'right_panel':'right_panel myclass'">
+        <router-outlet></router-outlet>
+    </div>
+</section>
+
+<!-- <ng-http-loader></ng-http-loader> -->
+
+<div class="loader" *ngIf="showLoader">
+    <img src="../assets/images/loader.gif" />
+</div>
+

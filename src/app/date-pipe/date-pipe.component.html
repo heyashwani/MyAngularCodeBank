@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <ul>
+    <li>Note: In this page's ts file a date pipe is being used that inbuilt in angular. 
+      <p><strong>Note:</strong> Never forget to register date pipe in that's component module file. Here this component is a part of app.module.ts so i am
+      registering this date pipe in app.module.ts like this.(other wise this will throw an error)</p> 
+        <figure>
+          <img src="../../assets/images/date1.png" alt="">
+          <img src="../../assets/images/date2.png" alt="">
+        </figure>
+    </li>
+    <li>
+      Note: If you don't want to register date pipe in module file like above, you have an another option.
+      <figure>
+        <img src="../../assets/images/date3.png" alt="">
+      </figure>
+    </li>
+  </ul>
+</div>
+<input type="date" [(ngModel)]="mydate">
+<button (click)="xyz()">Clicke me</button>

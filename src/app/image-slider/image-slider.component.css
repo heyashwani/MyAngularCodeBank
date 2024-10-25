@@ -1,0 +1,13 @@
+.carousel-item{
+  margin-right:unset;
+}
+
+.myclass{
+  background-color:red!important;
+  border:5px solid black;
+}
+
+/* .carousel-control-next, .carousel-control-prev{  ///// this line is in style.ts bcoz here it was not wrking
+  z-index: 100;
+  cursor:pointer;
+  } */

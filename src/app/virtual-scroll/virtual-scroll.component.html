@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row">
+		<virtual-scroller class="row" #scroll [items]="items" *ngIf="showDiv" (vsEnd)="fetchMore($event)">
+			<div class=" myclass"  *ngFor="let item of scroll.viewPortItems;let i=index">
+				{{item.first_name}}
+			</div>
+		</virtual-scroller>
+	</div>
+</div>

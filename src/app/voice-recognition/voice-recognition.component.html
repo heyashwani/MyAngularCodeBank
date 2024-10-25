@@ -1,0 +1,47 @@
+<div class="bg-info p-5">
+	<ul>
+		<li>
+			For complete Reference <a href="https://codezup.com/convert-speech-to-text-in-angular-speech-recognition-ui/" target="_blank">Click Here</a>
+		</li>
+
+		<li>
+			<p><strong>Step 1:</strong> First Donwload <a href="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js" target="_blank">https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js</a> this file. and save it in "assets/js" folder.</p>
+		</li>
+		<li>
+			<p><strong>Step 2:</strong> Now update your angular.json file. <strong>Check angular.json file of this project. .js file link of above file will be there in script array.</strong></p>
+		</li>
+		<li>
+			<p><strong>Step 3:</strong> Now copy .html code and .ts code. and use it in other project. nothing else to do now.</p>
+		</li>
+	</ul>
+</div>
+
+
+
+
+<div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+  <button type="button" (click)="startVoiceRecognition()">Record</button>
+</div>
+<ng-template #voicesection>
+  <ng-container *ngIf="!voiceActiveSectionError; else failure">
+    <ng-container *ngIf="voiceText; else start">
+        <span>{{voiceText}}</span>
+    </ng-container>
+    <ng-template #start>
+      <ng-container
+        *ngIf="voiceActiveSectionListening; else beginning">
+        <span>Listening...</span>
+      </ng-container>
+      <ng-template #beginning>
+        <span>Start talking...</span>
+      </ng-template>
+    </ng-template>
+  </ng-container>
+  <ng-template #failure>
+    <span>Didn't catch that</span>
+  </ng-template>
+  <div>
+    <button (click)="closeVoiceRecognition()">Close</button>
+    <button (click)="startVoiceRecognition()">Restart</button>
+  </div>
+</ng-template>

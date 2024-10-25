@@ -1,0 +1,12 @@
+<div class="container">
+<div class="jumbotron">
+    <a href="https://www.npmjs.com/package/ngx-lightbox" target="_blank">Complet Reference>></a>
+</div>
+  <div class="row">
+      <div class="col-sm-4" *ngFor="let image of _albums; let i=index">
+          <figure class="h-100">
+              <img [src]="image.thumb" (click)="open(i)" class="img-fluid "  />
+          </figure>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="border p-5 bg-light">
+  <p>For Complete Reference <a href="https://www.npmjs.com/package/ngx-captcha" target="_blank">Click Here</a></p>
+  <p>Video Reference <a href="https://youtu.be/AYznH6MBXM8" target="_blank">Click Here</a></p>
+  <p>
+    <strong>Generate SiteKey --->> <a href="https://www.google.com/recaptcha/admin/create" target="_blank">Click Here</a></strong>
+  </p>
+
+  <div>
+    <a href="https://dev.to/rodrigokamada/adding-the-google-recaptcha-v3-to-an-angular-application-kge" target="_blank" rel="noopener noreferrer">This is also a very good reference but it use another library called ng-recaptcha. You can try it also.</a>
+  </div>
+</div>
+
+<!-- recaptcha v2 -->
+<!-- <form [formGroup]="aFormGroup">
+  <ngx-recaptcha2 #captchaElem
+    [siteKey]="key"
+    (reset)="handleReset()"
+    (expire)="handleExpire()"
+    (error)="handleError()"
+    (load)="handleLoad()"
+    (success)="handleSuccess($event)"
+    
+    [size]="size"
+    [hl]="lang"
+    [theme]="Dark"
+    [type]="type"
+    formControlName="recaptcha">
+  </ngx-recaptcha2>
+</form> -->
+<!-- end recaptcha v2 -->
+
+
+<!-- recaptcha v3 -->
+<div >
+  <form [formGroup]="aFormGroup" (submit)="onSubmit()">
+    <ngx-invisible-recaptcha #captchaElem
+      [siteKey]="key"
+      (reset)="handleReset()"
+      (ready)="handleReady()"
+      (load)="handleLoad()"
+      (success)="handleSuccess($event)"
+      [useGlobalDomain]="false"
+      [type]="type"
+      [badge]="badge"
+      
+      
+       formControlName="recaptcha">
+    </ngx-invisible-recaptcha>
+
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+
+<!-- end recaptcha v3 -->
+
+<div>
+  <form (submit)="send()"> 
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+
+<button (click)="myReset()">Reset</button>

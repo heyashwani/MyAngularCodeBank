@@ -1,0 +1,31 @@
+<div>
+  <a href="https://www.npmjs.com/package/ngx-image-cropper" target="_blank" rel="noopener noreferrer"> Complete Reference</a>
+  <h5><strong>Note:</strong> I am using version "^3.0.0" for this project. version may differ for another angular project based on cli version.</h5>
+</div>
+
+
+<input type="file" (change)="fileChangeEvent($event)" />
+
+<div class="cropper_container">
+  <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="false"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper>
+</div>
+
+
+
+<div class="cropped_container">
+  <img [src]="croppedImage" />
+  <button (click)="abc()" type="button">click me</button>
+</div>
+
+
+
+

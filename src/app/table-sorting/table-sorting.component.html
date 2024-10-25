@@ -1,0 +1,24 @@
+<div class="mycard">
+	<div class="jumbotron">
+		<h2>Installation Process :</h2>
+		<img src="../../assets/images/install_sorting.png" class="img-fluid" /><br /><br />
+		<strong>Note -> This is ng2 order module. Form more information <a href="https://www.npmjs.com/package/ng2-order-pipe" target="_blank">Click Here</a></strong>
+	</div>
+	<table class="table">
+		<thead>
+			<th >Sr No  <button (click)="sortCol('srn')">Down</button> <button (click)="sortCol1('srn')">Up</button></th>
+			<th (click)="sortCol('name')">Name</th>
+			<th (click)="sortCol('fname')">Father Name</th>
+			<th (click)="sortCol('class')">Class</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let a of studArray | orderBy: key:reverse">
+				<td>{{a.srn}}</td>
+				<td>{{a.name}}</td>
+				<td>{{a.fname}}</td>
+				<td>{{a.class}}</td>
+			</tr>
+		</tbody>
+	  </table>
+</div>
+

@@ -1,0 +1,32 @@
+.active
+{
+    background-color:#c81f30!important;
+}
+.side_div
+{
+    overflow-y: auto;
+    height: 100%;
+    padding-bottom: 15px;
+}
+.side_ul
+{
+    list-style-type: none;
+    margin:0px;
+    padding-left: 0px;;
+}
+.side_ul li
+{
+    border-bottom: 1px solid #dd192b;
+}
+.side_ul li a
+{
+    display: block;
+    color:white;
+    background-color: #dc3545;
+    padding: 5px 12px;
+}
+.side_ul li a:hover
+{
+    background-color: #dd192b;
+    text-decoration:none;
+}

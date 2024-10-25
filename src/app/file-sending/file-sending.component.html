@@ -1,0 +1,38 @@
+<div class="container" style="border:1px solid red;">
+  <figure>
+    <img src="{{imgURL}}" alt="">
+  </figure>
+
+  <input type="file"  (change)="onFileChanged($event)" />
+  <button type="button" (click)="onUpload()">Save</button>
+</div>
+
+
+<div class="container" style="border:1px solid greenyellow;">
+
+  <input type="file"  (change)="onFileChangedCsv($event)" />
+  <button type="button" (click)="onUploadCsv()">Save Csv</button>
+</div>
+
+<div class="container" style="border:1px solid violet;">
+  <h1 class="mt-4">TheRichPost.com</h1>
+ 
+  <input class="form-control mb-5" type="file" class="upload" (change)="onFileChangedCsv($event.target.files)">
+
+  <table class="table table-bordered table-dark mt-5">
+    <thead>
+      <tr>
+        <th>SR</th>
+        <th *ngFor="let item of lines[0]; let i = index">{{item}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of linesR[0]; let i = index">
+        <td>{{i+2}}</td>
+        <td *ngFor="let itemm of lines[0]; let j = index">{{item[j]}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+</div>

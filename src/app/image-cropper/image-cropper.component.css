@@ -1,0 +1,30 @@
+.cropper_container{
+    max-width:100%;
+    height:auto;
+   
+    position: fixed;
+    top: 0px;
+    left:0px;
+    z-index: 1;
+    border:5px solid red;
+    text-align: center;
+}
+
+.cropped_container{
+    width:500px;
+    height:auto;
+   
+    position: fixed;
+    bottom: 0px;
+    right:0px;
+    z-index: 2;
+    border:5px solid green;
+    text-align: center;
+}
+
+.cropped_container img{
+    max-width:100%;
+    height:auto;
+   
+    
+}

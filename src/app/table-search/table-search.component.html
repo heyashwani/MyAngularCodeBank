@@ -1,0 +1,23 @@
+<div class="jumbotron">
+	<p>{{ "HOME.TABLESEARCHDATA" | translate }}</p>
+</div>
+<div class="contaienr">
+	<input type="search" class="mt-3 mb-2 ml-auto" placeholder="Search Here.." [(ngModel)]="query">
+	<table class="table">
+		<thead>
+			<th>Sr No</th>
+			<th>Name</th>
+			<th>Father Name</th>
+			<th>Class</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let a of studArray | searchPipe: query" (click)="abc(a)">
+				<td>{{a.srn}}</td>
+				<td>{{a.name}}</td>
+				<td>{{a.fname}}</td>
+				<td>{{a.class}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+

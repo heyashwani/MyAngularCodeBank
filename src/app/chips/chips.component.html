@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <a href="https://www.npmjs.com/package/ngx-chips" target="_blank">ngx-chip</a>
+  </div>
+</div>
+<div>
+  <tag-input [(ngModel)]='items' [removable]='true'></tag-input>
+  <button (click)="onClick()">click me</button>
+</div>
+
+<div class="border container  bg-light">
+  <div>
+    <a href="https://www.npmjs.com/package/ng-multiselect-dropdown"  target="_blank">Get Full Reference</a>
+  </div>
+  <ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+</div>

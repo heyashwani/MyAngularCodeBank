@@ -1,0 +1,7 @@
+{
+    "HOME": {
+      "TITLE": "Hi, Welcome to my article! {{value}}",
+      "SELECT": "Choose Language",
+      "TABLESEARCHDATA":"Here a pipe is being used for searching.You can find this pipe in pipe folder. When we create a pipe using ng g p pipe_name it will autometically registered in module.ts.Once it is registered in module.ts then we can use it anywere in project without register it in that particular component."
+    }
+  }
